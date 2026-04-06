@@ -1,6 +1,6 @@
-> こちらは Yukino Portfolio プロジェクトリポジトリとなります
+> こちらは ゆきフォリオ (YukiFolio) プロジェクトリポジトリになります
 
-![Yukino Portfolio v0.0.1](https://github.com/S2OUnicus/YukinoPortfolio/raw/main/Screenshot/v0.0.1/Main.png)
+![YukiFolio v0.0.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v0.0.1/Main.png)
 
 # バージョン
 
