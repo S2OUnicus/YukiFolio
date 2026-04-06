@@ -1,0 +1,222 @@
+@charset "utf-8";
+/*全体*/
+:root {
+	--primary-color: #c2a384;
+	--primary-inverse-color: #fff;
+	--global-space: 7vw;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #666;
+	font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	/*フォント種類*/
+	font-size: 16px;
+	line-height: 2;
+	background-image: url(../image/materiaru/backgraund.jpg);
+	overflow-x: hidden;
+	-webkit-text-size-adjust: none;
+}
+h1, h2, h3, h4, h5, p, ul, ol, li, dl, dt, dd, form, figure, form {
+	margin: 0px;
+	padding: 0px;
+	font-size: 100%;
+}
+ul {
+	list-style-type: none;
+}
+ol {
+	padding-left: 40px;
+	padding-bottom: 15px;
+}
+img {
+	border: none;
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+table {
+	border-collapse: collapse;
+	font-size: 100%;
+	border-spacing: 0;
+}
+a {
+	color: #666;
+	transition: 0.2s;
+}
+a:hover {
+	color: #7e6b50;
+	text-decoration: none;
+}
+#logo {
+	padding-top: 50px;
+	margin-left: -10px;
+}
+/*ナビゲーション*/
+nav {
+	display: block;
+	position: relative;
+	height: 50px;
+	bottom: 90px;
+}
+.nav-menu {
+	display: flex;
+	position: absolute;
+	top: 12px;
+	right: 40px;
+	gap: 30px;
+	list-style: none;
+	margin: 0;
+	padding: 0 10px;
+	z-index: 10;
+}
+.nav-menu a {
+	display: block;
+	text-decoration: none;
+	color: rgb(93, 59, 35);
+	font-size: 32px;
+	padding: 8px 14px;
+	border-radius: 10px;
+	position: relative;
+}
+.nav-menu a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 2px;
+	width: 100%;
+	height: 2px;
+	background-color: currentColor;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.25s ease;
+}
+.nav-menu a:hover::after,
+.nav-menu a:focus-visible::after {
+	transform: scaleX(1);
+}
+/*トップに戻る猫*/
+.peek-cat {
+	position: fixed;
+	bottom: 118px;
+	width: 200px;
+	padding: 0;
+	margin: 0;
+	right: -100px;
+	height: auto;
+	z-index: 9999;
+	pointer-events: auto;
+	cursor: pointer;
+	transition: right 0.35s ease;
+}
+.peek-cat.is-show {
+	right: -5px;
+}
+.peek-cat img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 40px;
+	z-index: 9999;
+}
+.peek-cat-tip {
+	position: absolute;
+	right: 50px;
+	bottom: 182px;
+	font-size: 14px;
+	padding: 6px 10px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.92);
+	color: #333;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+	opacity: 0;
+	transform: translateX(6px);
+	transition: opacity 0.18s ease, transform 0.18s ease;
+	pointer-events: none;
+	white-space: nowrap;
+}
+.peek-cat.is-show .peek-cat-tip {
+	opacity: 1;
+	transform: translateX(0);
+}
+.peek-cat:hover .peek-cat-tip,
+.peek-cat:focus-visible .peek-cat-tip {
+	opacity: 1;
+	transform: translateX(0);
+}
+/*メイン*/
+#contents {
+	position: relative;
+	top: 100px;
+	left: 72px;
+	clear: both;
+	overflow: hidden;
+	background: #FFF;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+	padding: 100px;
+	margin-bottom: 100px;
+	width: 75%;
+	height: 2500px;
+	border-radius: 10px;
+	z-index: 2;
+}
+.profile-name {
+	font-size: 40px;
+}
+#profile-title {
+	color: rgb(93, 59, 35);
+	font-size: 44px;
+	margin-bottom: 40px;
+	margin-top: -30px;
+	z-index: 2;
+	text-align: center;
+}
+.profile-school {
+	font-size: 20px;
+	color: rgb(93, 59, 35);
+	margin-bottom: 50px;
+}
+.slide-right,
+.slide-left {
+	opacity: 0;
+	transition: all 1s ease;
+}
+.slide-right {
+	transform: translateX(100px);
+}
+.slide-left {
+	transform: translateX(-100px);
+}
+.slide-right.show,
+.slide-left.show {
+	opacity: 1;
+	transform: translateX(0);
+}
+/*フッター*/
+#footer {
+	align-items: center;
+	justify-content: center;
+	margin-top: 300px;
+	margin-bottom: -300px;
+	display: flex;
+	gap: 100px;
+	list-style-type: none;
+}
+#footer a {
+	color: rgb(93, 59, 35);
+	text-decoration: none;
+	font-size: 20px;
+	justify-content: center;
+}
+#footer :hover {
+	color: rgb(55, 141, 21);
+}
+/*コピーライト*/
+.copyright {
+	position: relative;
+	top: 300px;
+	margin: -30px;
+	text-align: center;
+	color: rgb(93, 59, 35);
+	background-color: rgb(193, 211, 199);
+}
