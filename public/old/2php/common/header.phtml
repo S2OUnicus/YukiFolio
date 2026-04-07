@@ -1,0 +1,31 @@
+<?php
+$showHamburger = $showHamburger ?? false;
+$headerExtraHtml = $headerExtraHtml ?? '';
+$basePath = $basePath ?? '';
+?>
+<header>
+	<h1 id="logo">
+		<a href="<?= htmlspecialchars($basePath . 'index.php', ENT_QUOTES, 'UTF-8') ?>">
+			<img src="<?= htmlspecialchars($basePath . 'image/materiaru/logo.png', ENT_QUOTES, 'UTF-8') ?>" alt="YUKINO-logo">
+		</a>
+	</h1>
+	<nav>
+<?php if ($showHamburger): ?>
+		<button class="hamburger" aria-label="メニューを開く">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+<?php endif; ?>
+		<ul class="nav-menu">
+			<li><a href="<?= htmlspecialchars($basePath . 'gallery.php', ENT_QUOTES, 'UTF-8') ?>">gallery</a></li>
+			<li><a href="<?= htmlspecialchars($basePath . 'profile.php', ENT_QUOTES, 'UTF-8') ?>">profile</a></li>
+			<li><a href="<?= htmlspecialchars($basePath . 'FAQ.php', ENT_QUOTES, 'UTF-8') ?>">FAQ</a></li>
+			<li><a href="<?= htmlspecialchars($basePath . 'contact.php', ENT_QUOTES, 'UTF-8') ?>">Inquiry</a></li>
+		</ul>
+	</nav>
+<?php if ($headerExtraHtml !== ''): ?>
+<?= $headerExtraHtml ?>
+
+<?php endif; ?>
+</header>

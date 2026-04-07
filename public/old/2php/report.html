@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YUKINO サイト構成レポート</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7;margin:0;background:#f7f7fb;color:#222}
+main{max-width:1180px;margin:0 auto;padding:32px 20px 64px}
+h1,h2,h3{line-height:1.3}section{background:#fff;border:1px solid #e4e6ef;border-radius:14px;padding:24px;margin:0 0 20px}
+code{background:#f1f3f8;padding:2px 6px;border-radius:6px}table{width:100%;border-collapse:collapse;margin-top:12px;display:block;overflow:auto}
+th,td{border:1px solid #d8dbe8;padding:10px;vertical-align:top;text-align:left}th{background:#f4f6fb}ul{margin:10px 0 0 1.2em}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.card{background:#f7f9fd;border:1px solid #e1e6f2;border-radius:12px;padding:14px}.ok{color:#0a7a39;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+<h1>YUKINO サイト構成変更レポート</h1>
+<section>
+<h2>概要</h2>
+<div class="cards">
+<div class="card"><strong>対象外</strong><div>JIMUCTI/ は今回も無視</div></div>
+<div class="card"><strong>作品URL</strong><div><code>work?id=N</code> に一本化</div></div>
+<div class="card"><strong>公開入口</strong><div><code>work/index.php</code></div></div>
+<div class="card"><strong>作品差分</strong><div><code>cont/work/*.phtml</code></div></div>
+<div class="card"><strong>廃止</strong><div><code>work1.php</code>〜<code>work14.php</code></div></div>
+</div>
+<ul>
+<li>旧作品ページごとのラッパーを廃止し、作品詳細の表示は 1 本の入口で扱う形に整理しました。</li>
+<li>すべての内部リンクと参照文字列を再点検し、作品導線は <code>work?id=N</code> に更新しました。</li>
+<li>共通 partial と作品差分 partial は維持しつつ、作品URLだけを一本化しています。</li>
+<li>名称混同を避けるため、作品差分 partial は <code>cont/work/</code> へ移動しました。</li>
+</ul>
+</section>
+<section>
+<h2>旧ファイルと新ファイルの対応関係</h2>
+<table>
+<thead><tr><th>旧URL / 旧ファイル</th><th>新URL</th><th>描画入口</th><th>作品差分</th></tr></thead>
+<tbody>
+<tr><td><code>work1.html</code></td><td><code>work?id=1</code></td><td><code>work/index.php</code></td><td><code>cont/work/1.phtml</code></td></tr><tr><td><code>work2.html</code></td><td><code>work?id=2</code></td><td><code>work/index.php</code></td><td><code>cont/work/2.phtml</code></td></tr><tr><td><code>work3.html</code></td><td><code>work?id=3</code></td><td><code>work/index.php</code></td><td><code>cont/work/3.phtml</code></td></tr><tr><td><code>work4.html</code></td><td><code>work?id=4</code></td><td><code>work/index.php</code></td><td><code>cont/work/4.phtml</code></td></tr><tr><td><code>work5.html</code></td><td><code>work?id=5</code></td><td><code>work/index.php</code></td><td><code>cont/work/5.phtml</code></td></tr><tr><td><code>work6.html</code></td><td><code>work?id=6</code></td><td><code>work/index.php</code></td><td><code>cont/work/6.phtml</code></td></tr><tr><td><code>work7.html</code></td><td><code>work?id=7</code></td><td><code>work/index.php</code></td><td><code>cont/work/7.phtml</code></td></tr><tr><td><code>work8.html</code></td><td><code>work?id=8</code></td><td><code>work/index.php</code></td><td><code>cont/work/8.phtml</code></td></tr><tr><td><code>work9.html</code></td><td><code>work?id=9</code></td><td><code>work/index.php</code></td><td><code>cont/work/9.phtml</code></td></tr><tr><td><code>work10.html</code></td><td><code>work?id=10</code></td><td><code>work/index.php</code></td><td><code>cont/work/10.phtml</code></td></tr><tr><td><code>work11.html</code></td><td><code>work?id=11</code></td><td><code>work/index.php</code></td><td><code>cont/work/11.phtml</code></td></tr><tr><td><code>work12.html</code></td><td><code>work?id=12</code></td><td><code>work/index.php</code></td><td><code>cont/work/12.phtml</code></td></tr><tr><td><code>work13.html</code></td><td><code>work?id=13</code></td><td><code>work/index.php</code></td><td><code>cont/work/13.phtml</code></td></tr><tr><td><code>work14.html</code></td><td><code>work?id=14</code></td><td><code>work/index.php</code></td><td><code>cont/work/14.phtml</code></td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>現在の作品ページ構成</h2>
+<table>
+<thead><tr><th>ファイル</th><th>役割</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td><code>work/index.php</code></td><td>公開URL入口兼作品ページ本体</td><td><code>$_GET['id']</code> を受け取り、id 検証、<code>cont/work/*.phtml</code> の存在確認、共通 header/footer 読込、作品本体の描画までを 1 ファイルで担当します。</td></tr>
+<tr><td><code>cont/work/1.phtml</code>〜<code>cont/work/14.phtml</code></td><td>作品差分</td><td>各作品ごとに異なる本文だけを保持します。</td></tr>
+<tr><td><code>common/head.phtml</code>, <code>header.phtml</code>, <code>peek-cat.phtml</code>, <code>footer.phtml</code></td><td>共通 partial</td><td>ルートページと <code>work/index.php</code> の双方から使えるよう、相対パスの基準を変数化しました。</td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>リンク修正の要点</h2>
+<table>
+<thead><tr><th>修正対象</th><th>旧</th><th>新</th><th>反映先</th></tr></thead>
+<tbody>
+<tr><td>作品リンク</td><td><code>work12.html</code> / <code>work12.php</code></td><td><code>work?id=12</code></td><td><code>index.php</code>, <code>gallery.php</code>, <code>report.html</code> など</td></tr>
+<tr><td>作品公開入口</td><td>作品ごとの PHP ラッパー</td><td><code>work/index.php</code></td><td>公開アクセスを一本化</td></tr>
+<tr><td>作品内アセット参照</td><td><code>image/...</code></td><td><code>../image/...</code> 相当の動的プレフィックス</td><td><code>cont/work/*.phtml</code></td></tr>
+<tr><td>共通 partial の相対リンク</td><td>ルート固定</td><td>ページ階層に応じた <code>$basePath</code> 対応</td><td><code>common/*.phtml</code></td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>CSS / JS と現在の PHP 構成の再検証</h2>
+<table>
+<thead><tr><th>資産</th><th>読込先</th><th>主な対象</th><th>要素の所在</th><th>確認内容</th></tr></thead>
+<tbody>
+<tr><td><code>js/Return-to-top.js</code></td><td><code>index.php</code>, <code>gallery.php</code>, <code>profile.php</code>, <code>contact.php</code>, <code>FAQ.php</code>, <code>work/index.php?id=1..14</code></td><td><code>#peekCat</code>, <code>.peek-cat-tip</code></td><td><code>common/peek-cat.phtml</code></td><td>全ページで共通動作を確認。</td></tr>
+<tr><td><code>js/slick.js</code></td><td><code>index.php</code></td><td><code>.mainimg-slick</code></td><td><code>common/header.phtml</code> に注入するスライダー部分</td><td>ホーム専用のまま維持。</td></tr>
+<tr><td><code>js/slideshow.js</code></td><td><code>index.php</code>, <code>gallery.php</code></td><td><code>#graphic ul li</code></td><td>各ページの固有本文</td><td>作品ルーティング変更の影響なし。</td></tr>
+<tr><td><code>js/scroll.js</code></td><td><code>profile.php</code></td><td><code>.slide-right</code>, <code>.slide-left</code></td><td><code>profile.php</code></td><td>変更なし。</td></tr>
+<tr><td><code>js/FAQ.js</code></td><td><code>FAQ.php</code></td><td><code>.line</code>, <code>.answer</code>, <code>.open</code></td><td><code>FAQ.php</code></td><td>変更なし。</td></tr>
+<tr><td><code>css/work.css</code></td><td><code>work?id=1..14</code></td><td><code>#contents</code>, <code>#main</code>, <code>.work</code>, <code>.option*</code></td><td><code>work/index.php</code> + <code>cont/work/*.phtml</code></td><td>作品共通外枠と作品差分の双方に対応。</td></tr>
+</tbody>
+</table>
+</section>
+<section>
+<h2>検証結果</h2>
+<table>
+<thead><tr><th>検証項目</th><th>結果</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>PHP 構文</td><td class="ok">通過</td><td>ルート PHP、共通 partial、<code>work/index.php</code>、<code>cont/work/*.phtml</code> をチェック。</td></tr>
+<tr><td>HTTP 動作</td><td class="ok">200 / 404 確認</td><td><code>/work?id=12</code> で 200、存在しない <code>/work?id=999</code> で 404 を確認。</td></tr>
+<tr><td>内部リンク</td><td class="ok">旧作品URL 0 件</td><td><code>work1.php</code>〜<code>work14.php</code> と <code>work1.html</code>〜<code>work14.html</code> の残存参照を除去。</td></tr>
+<tr><td>アセット参照</td><td class="ok">欠落なし</td><td>主要ページと作品ページの HTML 出力から CSS / JS / 画像 / PDF のリンク切れを再確認。</td></tr>
+</tbody>
+</table>
+</section>
+</main>
+</body>
+</html>
