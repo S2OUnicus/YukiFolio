@@ -61,12 +61,12 @@ error_reporting(E_ALL);
             </div>
 
             <!-- PCメニュー -->
-            <div id="st_nv_menu" class="uk-flex uk-flex-middle">
-                <div class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Index</div>
-                <div class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Gallery</div>
-                <div class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Profile</div>
-                <div class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">FAQ</div>
-                <div class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Inquiry</div>
+            <div id="st_nv_menu" class="uk-flex uk-flex-middle uk-flex-right">
+                <a href="#" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Index</a>
+                <a href="#" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Gallery</a>
+                <a href="#" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Profile</a>
+                <a href="#" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">FAQ</a>
+                <a href="#" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center">Inquiry</a>
             </div>
         </nav>
 
@@ -159,7 +159,124 @@ error_reporting(E_ALL);
 
                 <!-- 正文メイン部分 -->
                 <div id="st_mn_ct_main">
-                    
+                    <!-- お知らせ部分 -->
+                    <section id="st_mn_ct_mn_notice">
+                    </section>
+
+                    <!-- 商品部分 -->
+                    <section id="st_mn_ct_mn_product">
+                        <!-- グループ：季節限定ハンドクリーム -->
+                        <div class="st_mn_ct_mn_pd_group uk-flex uk-flex-column uk-flex-middle">
+                            <!-- グループタイトル -->
+                            <div class="st_mn_ct_mn_pd_g_title uk-flex uk-flex-middle">
+                                季節限定ハンドクリーム
+                            </div>
+                            <!-- グループリスト -->
+                            <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
+                                <!-- 商品カードユニット -->
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- グループ：アパレル商品 -->
+                        <div class="st_mn_ct_mn_pd_group uk-flex uk-flex-column uk-flex-middle">
+                            <!-- グループタイトル -->
+                            <div class="st_mn_ct_mn_pd_g_title uk-flex uk-flex-middle">
+                                アパレル商品
+                            </div>
+                            <!-- グループリスト -->
+                            <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- グループ：作品展示会用 -->
+                        <div class="st_mn_ct_mn_pd_group uk-flex uk-flex-column uk-flex-middle">
+                            <!-- グループタイトル -->
+                            <div class="st_mn_ct_mn_pd_g_title uk-flex uk-flex-middle">
+                                作品展示会用
+                            </div>
+                            <!-- グループリスト -->
+                            <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- グループ：ロゴ -->
+                        <div class="st_mn_ct_mn_pd_group uk-flex uk-flex-column uk-flex-middle">
+                            <!-- グループタイトル -->
+                            <div class="st_mn_ct_mn_pd_g_title uk-flex uk-flex-middle">
+                                ロゴ
+                            </div>
+                            <!-- グループリスト -->
+                            <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- グループ：その他 -->
+                        <div class="st_mn_ct_mn_pd_group uk-flex uk-flex-column uk-flex-middle">
+                            <!-- グループタイトル -->
+                            <div class="st_mn_ct_mn_pd_g_title uk-flex uk-flex-middle">
+                                その他
+                            </div>
+                            <!-- グループリスト -->
+                            <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
                 </div>
             </section>
         </main>
