@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリーンアップ検証レポート</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --code-bg: #f3f4f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 20px 60px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    h1, h2, h3 {
+      line-height: 1.35;
+      margin-top: 1.8em;
+      margin-bottom: 0.7em;
+    }
+    h1 {
+      margin-top: 0;
+      padding-bottom: 0.45em;
+      border-bottom: 2px solid var(--line);
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.45rem;
+      padding-left: 0.7em;
+      border-left: 6px solid var(--accent);
+    }
+    h3 {
+      font-size: 1.15rem;
+      color: #111827;
+      background: var(--accent-soft);
+      padding: 0.45em 0.7em;
+      border-radius: 10px;
+    }
+    p, li { font-size: 0.98rem; }
+    ul { padding-left: 1.4em; }
+    code {
+      background: var(--code-bg);
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 0.15em 0.4em;
+      font-size: 0.92em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      background: #fff;
+    }
+    th {
+      background: #f9fafb;
+      font-weight: 700;
+    }
+    tr:nth-child(even) td { background: #fcfcfd; }
+    hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
+    .meta {
+      color: var(--muted);
+      margin-top: -0.2rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.96rem;
+    }
+    .footer {
+      margin-top: 2.4rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+    }
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .wrap { padding: 22px 16px; border-radius: 12px; }
+      h1 { font-size: 1.55rem; }
+      h2 { font-size: 1.2rem; }
+      h3 { font-size: 1.05rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>クリーンアップ検証レポート</h1>
+<ul>
+<li>対象: <code>JIMUCTI/</code> を除くサイト全体</li>
+<li>方針: HTML からの読込、JS セレクタ、CSS セレクタ、画像/PDF 参照を静的に照合し、確証のある未使用要素のみ削除</li>
+</ul>
+<h2>1. 検証後に残した JS と HTML の関連</h2>
+<h3>js/FAQ.js</h3>
+<table>
+<thead>
+<tr>
+  <th>HTML</th>
+  <th>関連要素</th>
+  <th>一致数</th>
+  <th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>FAQ.html</td>
+  <td><code>.open</code></td>
+  <td>24</td>
+  <td>クリックで <code>.line</code> に <code>is-open</code> を付与し、同一行の <code>.answer</code> を開閉</td>
+</tr>
+<tr>
+  <td>FAQ.html</td>
+  <td><code>.line .answer</code></td>
+  <td>24</td>
+  <td>初期状態で <code>max-height: 0</code> を設定</td>
+</tr>
+</tbody>
+</table>
+<h3>js/Return-to-top.js</h3>
+<table>
+<thead>
+<tr>
+  <th>HTML</th>
+  <th>関連要素</th>
+  <th>一致数</th>
+  <th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>FAQ.html, contact.html, gallery.html, index.html, profile.html, work1.html〜work14.html</td>
+  <td><code>#peekCat</code></td>
+  <td>各1</td>
+  <td>表示/非表示切替とページ先頭へのスムーススクロール</td>
+</tr>
+</tbody>
+</table>
+<h3>js/scroll.js</h3>
+<table>
+<thead>
+<tr>
+  <th>HTML</th>
+  <th>関連要素</th>
+  <th>一致数</th>
+  <th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>profile.html</td>
+  <td><code>.slide-right</code></td>
+  <td>2</td>
+  <td>スクロール到達時に <code>.show</code> を付与</td>
+</tr>
+<tr>
+  <td>profile.html</td>
+  <td><code>.slide-left</code></td>
+  <td>2</td>
+  <td>スクロール到達時に <code>.show</code> を付与</td>
+</tr>
+</tbody>
+</table>
+<h3>js/slick.js</h3>
+<table>
+<thead>
+<tr>
+  <th>HTML</th>
+  <th>関連要素</th>
+  <th>一致数</th>
+  <th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>index.html</td>
+  <td><code>.mainimg-slick</code></td>
+  <td>1</td>
+  <td>Slick スライダーを初期化</td>
+</tr>
+</tbody>
+</table>
+<h3>js/slideshow.js</h3>
+<table>
+<thead>
+<tr>
+  <th>HTML</th>
+  <th>関連要素</th>
+  <th>一致数</th>
+  <th>役割</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>index.html</td>
+  <td><code>#graphic ul li</code></td>
+  <td>4</td>
+  <td><code>.now</code> クラスを巡回させてポスターを切替</td>
+</tr>
+<tr>
+  <td>gallery.html</td>
+  <td><code>#graphic ul li</code></td>
+  <td>4</td>
+  <td><code>.now</code> クラスを巡回させてポスターを切替</td>
+</tr>
+</tbody>
+</table>
+<h2>2. HTML から削除した未使用読込</h2>
+<table>
+<thead>
+<tr>
+  <th>HTML</th>
+  <th>削除した読込</th>
+  <th>根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>gallery.html</td>
+  <td>jQuery CDN</td>
+  <td>純粋な DOM 操作用のみで未使用</td>
+</tr>
+<tr>
+  <td>work1.html〜work14.html</td>
+  <td>Slick CSS / jQuery / Slick JS / <code>js/slideshow.js</code></td>
+  <td>対象要素 <code>#graphic</code> / <code>.mainimg-slick2</code> が存在しない</td>
+</tr>
+<tr>
+  <td>work1.html〜work14.html</td>
+  <td><code>js/slick2.js</code></td>
+  <td>対象要素 <code>.mainimg-slick2</code> が全ページで 0 件</td>
+</tr>
+<tr>
+  <td>index.php</td>
+  <td>jQuery CDN / Slick CSS / Slick JS / <code>js/Return-to-top.js</code> / <code>js/slick.js</code> / <code>js/slideshow.js</code></td>
+  <td>対象要素 <code>#peekCat</code> / <code>.mainimg-slick</code> / <code>#graphic ul li</code> が存在しない</td>
+</tr>
+</tbody>
+</table>
+<h2>3. JS から削除した未使用処理</h2>
+<table>
+<thead>
+<tr>
+  <th>対象</th>
+  <th>削除内容</th>
+  <th>根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>js/FAQ.js</td>
+  <td><code>.faq-question</code> 用 DOMContentLoaded ブロック</td>
+  <td><code>FAQ.html</code> に <code>.faq-question</code> が 0 件</td>
+</tr>
+<tr>
+  <td>js/FAQ.js</td>
+  <td><code>#imgModal</code> / <code>#imgModalImg</code> / <code>.answer-img</code> 用モーダル処理</td>
+  <td><code>FAQ.html</code> に該当要素が 0 件</td>
+</tr>
+<tr>
+  <td>js/slick2.js</td>
+  <td>ファイル全体を削除</td>
+  <td>全 HTML で <code>.mainimg-slick2</code> が 0 件</td>
+</tr>
+</tbody>
+</table>
+<h2>4. CSS から削除した未使用セレクタ</h2>
+<h3>css/FAQ.css</h3>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>削除セレクタ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><code>h3</code></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>h4</code></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>h5</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>p</code></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>ol</code></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>dl</code></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>dt</code></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>dd</code></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>form</code></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>figure</code></td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>table</code></td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>.faq-container .FAQ1</code></td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>.faq-container .FAQ2</code></td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>.faq-container .FAQ3</code></td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>.faq-container .FAQ4</code></td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>.faq-container .list</code></td>
+</tr>
+</tbody>
+</table>
+<h3>css/contact.css</h3>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>削除セレクタ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><code>h2</code></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>h3</code></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>h4</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>h5</code></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>ol</code></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>dl</code></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>dt</code></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>dd</code></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>figure</code></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>table</code></td>
+</tr>
+</tbody>
+</table>
+<h3>css/gallery.css</h3>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>削除セレクタ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><code>h3</code></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>h5</code></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>ol</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>dl</code></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>dt</code></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>dd</code></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>form</code></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>table</code></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>#main h3</code></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>#main h2 + p</code></td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>#main h3 + p</code></td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>#main p + p</code></td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>#main .list2</code></td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>#main .list2 a</code></td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>#main .list2 h4</code></td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>#main .list2 a:hover figure img</code></td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>.list-free</code></td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>.list-free .text</code></td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>.list-free h3</code></td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>.list-free .image</code></td>
+</tr>
+<tr>
+  <td>21</td>
+  <td><code>.list-free .image img</code></td>
+</tr>
+</tbody>
+</table>
+<h3>css/style.css</h3>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>削除セレクタ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><code>h3</code></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>h5</code></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>ol</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>form</code></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>table</code></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>#portfolio figure</code></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>#main h3</code></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>#main h2 + p</code></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>#main h3 + p</code></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>#main p + p</code></td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>#main .list</code></td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>#main .list a</code></td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>#main .list a:hover</code></td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>#main .list figure img</code></td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>#main .list h4</code></td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>#main .list p</code></td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>.list-free .text</code></td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>.list-free h3</code></td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>.list-free .image</code></td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>.list-free .image img</code></td>
+</tr>
+</tbody>
+</table>
+<h3>css/n_base.css</h3>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>削除セレクタ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><code>.no-select</code></td>
+</tr>
+</tbody>
+</table>
+<h3>css/profile.css</h3>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>削除セレクタ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><code>h2</code></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>h3</code></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>h4</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>h5</code></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>p</code></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>ol</code></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>dl</code></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>dt</code></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>dd</code></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>form</code></td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>figure</code></td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>table</code></td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>.profile-name</code></td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>.profile-school</code></td>
+</tr>
+</tbody>
+</table>
+<h3>css/work.css</h3>
+<table>
+<thead>
+<tr>
+  <th>No.</th>
+  <th>削除セレクタ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><code>h3</code></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>h4</code></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>h5</code></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>ol</code></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>form</code></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>table</code></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>.mainimg-slick</code></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>.mainimg-slick img</code></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>ul.slick-dots</code></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>ul.slick-dots li</code></td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>ul.slick-dots li button</code></td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>ul.slick-dots li.slick-active button</code></td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>#main h3</code></td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>#main h2 + p</code></td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>#main h3 + p</code></td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>#main p + p</code></td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>#main .list</code></td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>#main .list a</code></td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>#main .list a:hover</code></td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>#main .list figure img</code></td>
+</tr>
+<tr>
+  <td>21</td>
+  <td><code>#main .list h4</code></td>
+</tr>
+<tr>
+  <td>22</td>
+  <td><code>#main .list p</code></td>
+</tr>
+<tr>
+  <td>23</td>
+  <td><code>#main .list2</code></td>
+</tr>
+<tr>
+  <td>24</td>
+  <td><code>#main .list2 a</code></td>
+</tr>
+<tr>
+  <td>25</td>
+  <td><code>#main .list2 h4</code></td>
+</tr>
+<tr>
+  <td>26</td>
+  <td><code>#main .list2 a:hover figure img</code></td>
+</tr>
+<tr>
+  <td>27</td>
+  <td><code>.list-free .text</code></td>
+</tr>
+<tr>
+  <td>28</td>
+  <td><code>.list-free h3</code></td>
+</tr>
+<tr>
+  <td>29</td>
+  <td><code>.list-free .image</code></td>
+</tr>
+<tr>
+  <td>30</td>
+  <td><code>.list-free .image img</code></td>
+</tr>
+<tr>
+  <td>31</td>
+  <td><code>span.option2</code></td>
+</tr>
+<tr>
+  <td>32</td>
+  <td><code>span.option3</code></td>
+</tr>
+<tr>
+  <td>33</td>
+  <td><code>span.option4</code></td>
+</tr>
+<tr>
+  <td>34</td>
+  <td><code>span.option5</code></td>
+</tr>
+<tr>
+  <td>35</td>
+  <td><code>span.option6</code></td>
+</tr>
+<tr>
+  <td>36</td>
+  <td><code>span.option7</code></td>
+</tr>
+<tr>
+  <td>37</td>
+  <td><code>span.option8</code></td>
+</tr>
+<tr>
+  <td>38</td>
+  <td><code>span.option9</code></td>
+</tr>
+<tr>
+  <td>39</td>
+  <td><code>span.option10</code></td>
+</tr>
+<tr>
+  <td>40</td>
+  <td><code>h2 span.option2 h2 span.opition3</code></td>
+</tr>
+</tbody>
+</table>
+<h2>5. 削除したファイル</h2>
+<table>
+<thead>
+<tr>
+  <th>削除ファイル</th>
+  <th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>Unused/image/others/#U540d#U79f0#U672a#U8a2d#U5b9a (50 x 50 px) (1).png</code></td>
+  <td>以前の未使用画像</td>
+</tr>
+<tr>
+  <td><code>Unused/image/others/profile.png</code></td>
+  <td>以前の未使用画像</td>
+</tr>
+<tr>
+  <td><code>js/slick2.js</code></td>
+  <td>未使用 JS</td>
+</tr>
+</tbody>
+</table>
+<h2>6. 最終確認</h2>
+<ul>
+<li><code>js/FAQ.js</code>, <code>js/Return-to-top.js</code>, <code>js/scroll.js</code>, <code>js/slick.js</code>, <code>js/slideshow.js</code> は、読み込み先 HTML に実在する要素だけを参照する状態に整理済み。</li>
+<li><code>css/FAQ.css</code>, <code>css/contact.css</code>, <code>css/gallery.css</code>, <code>css/style.css</code>, <code>css/n_base.css</code>, <code>css/profile.css</code>, <code>css/work.css</code> は、現在リンクされている HTML に対して未使用セレクタ 0 件。</li>
+<li><code>JIMUCTI/</code> 配下は今回の検証・削除対象から除外。</li>
+<li>非 HTML/CSS/JS 資産についても再走査し、<code>JIMUCTI/</code> を除く未使用ファイルは 0 件。</li>
+</ul>
+
+    <div class="footer">この HTML は <code>analysis_report.md</code> をもとに生成した閲覧用ファイルです。</div>
+  </main>
+</body>
+</html>
