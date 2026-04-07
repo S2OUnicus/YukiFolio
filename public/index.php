@@ -79,8 +79,8 @@ error_reporting(E_ALL);
                 <div class="mainimg-slick">
                     <div><img src="./image/slide/slide1.png" alt="作品集"></div>
                     <div><img src="./image/slide/slide2.png" alt="YUKINOチラシ"></div>
-                    <div><img src="./image/slide/slide3.png" alt="LINEスタンプ"></div>
-                    <div><img src="./image/slide/slide4.png" alt="間違い探し"></div>
+                    <div><a href="https://store.line.me/stickershop/product/31223760/ja"><img src="./image/slide/slide3.png" alt="LINEスタンプ"></a></div>
+                    <div><a href="./game/diffcat.php"><img src="./image/slide/slide4.png" alt="間違い探し"></a></div>
                 </div>
             </section>
 
@@ -119,7 +119,7 @@ error_reporting(E_ALL);
                             <span class="st_mn_ct_sd_wk_inf_title">
                                 ↑やってみる？
                             </span>
-                            <a href="#" class="st_mn_ct_sd_wk_inf_link"></a>
+                            <a href="" class="st_mn_ct_sd_wk_inf_link"></a>
                         </div>
                     </div>
                     <div class="st_mn_ct_sd_works uk-flex uk-flex-column">
@@ -134,7 +134,7 @@ error_reporting(E_ALL);
                         </div>
                     </div>
                     <div class="st_mn_ct_sd_works uk-flex uk-flex-column">
-                        <a href="#" class="st_mn_ct_sd_wk_img">
+                        <a href="./PDF/portfolio.pdf" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/portfolio.png" alt="">
                         </a>
                         <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
@@ -145,7 +145,7 @@ error_reporting(E_ALL);
                         </div>
                     </div>
                     <div class="st_mn_ct_sd_works uk-flex uk-flex-column">
-                        <a href="#" class="st_mn_ct_sd_wk_img">
+                        <a href="https://store.line.me/stickershop/product/31223760/ja" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/LINE-stamp.png" alt="">
                         </a>
                         <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
@@ -390,7 +390,7 @@ error_reporting(E_ALL);
                         <br>
                         <li class="uk-nav-divider"></li>
 
-                        <li>Version: v0.2.1 (Built 260408 025801+09)</li>
+                        <li>Version: v0.2.2 (Built 260408 041123+09)</li>
                         <li>@S2OUnicus</li>
                     </ul>
                 </div>

@@ -1,6 +1,6 @@
 > こちらは ゆきフォリオ (YukiFolio) プロジェクトのリポジトリになります
 
-![YukiFolio v0.0.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v0.2.1/Main.png)
+![YukiFolio v0.2.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v0.2.1/Main.png)
 
 # バージョン
 
