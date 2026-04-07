@@ -90,10 +90,10 @@ div {
 * ------------------------------------------
 */
 
-/* ナビゲーション部分 */
+/* ____ ナビゲーション部分 ____ */
 nav {
     width: 100%;
-    height: 10rem;
+    height: 16rem;
 }
 
 /* モバイルメニュー呼び出しボタン */
@@ -119,27 +119,68 @@ nav {
 #st_nv_menu {
     width: calc(100% - 26rem);
     height: 90%;
+}
 
-    /* DEBUG */
-    background-color: violet;
+a:hover {
+    color: #7e6b50;
+    text-decoration: none;
+}
+
+#st_nv_menu > a {
+    position: relative;
+    text-decoration: none;
+    color: #5d3b23;
+    font-size: 2rem;
+    margin: 0 1rem;
+}
+
+#st_nv_menu > a:last-child {
+    margin-right: 2rem;
+}
+
+#st_nv_menu > a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+#st_nv_menu > a:hover::after,
+#st_nv_menu > a:focus-visible::after {
+    transform: scaleX(1);
 }
 
 @media screen and (orientation: portrait) {
     #st_nv_cmbtn {
         display: block;
-        position: fixed;
-        left: 1rem;
         width: 3rem;
         height: 3rem;
         overflow: hidden;
-        background-color: #37ecba;
-        border-radius: 1rem;
+
+        position: fixed;
+        left: 1rem;
+        top: 1rem;
+
         padding: 0;
+
+        background-color: rgba(126,107,80,.8);
+        backdrop-filter: blur(.4rem);
+        border-radius: 1.2rem;
     }
 
     #st_nv_brand {
         width: 100%;
         justify-content: center;
+    }
+
+    #st_nv_b_logo {
+        max-height: 8rem;
     }
 
     #st_nv_menu {
@@ -152,39 +193,103 @@ nav {
 * ------------------------------------------
 */
 
-/* 主要部分 */
+/* ____ 主要部分 ____ */
 main {
     width: 100%;
-    min-height: calc(100vh - 10rem);
-    min-height: calc(100dvh - 10rem);
+    min-height: calc(100vh - 16rem);
+    min-height: calc(100dvh - 16rem);
 }
 
-/* スライダー部分 */
+/* === スライダー部分 === */
 #st_mn_slider {
     width: 100%;
-    height: calc(100vh - 10.4rem);
-    height: calc(100dvh - 10.4rem);
+    height: calc(100vh - 16.4rem);
+    height: calc(100dvh - 16.4rem);
 }
 
-#st_mn_sl_main {
-    height: calc(100% - 6rem);
-
-    /* DEBUG */
-    background-color: cornflowerblue;
+/* 画像容器 */
+#st_mn_slider > div {
+    height: 100%;
+    padding-top: 3rem;
 }
 
-#st_mn_sl_switch {
+.slick-slide > div > div {
+    overflow: visible;
+}
+
+.slick-slide img {
+    height: calc(100vh - 16rem - 3rem - 7rem);
+    max-width: 80vw;
+    aspect-ratio: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem .4rem rgba(0, 0, 0, 0.3);
+}
+
+/* スイッチ部分 */
+ul {
+    list-style-type: none;
+}
+
+ul.slick-dots {
     height: 6rem;
 
-    /* DEBUG */
-    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: -3rem;
 }
 
-/* 正文部分 */
+ul.slick-dots li {
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+ul.slick-dots li button {
+    display: block;
+    border: none;
+    padding: 0;
+    text-indent: -9999px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #ccc;
+}
+
+ul.slick-dots li.slick-active button {
+    background: #7e6b50;
+}
+
+@media screen and (orientation: portrait) {
+    .slick-slide img {
+        height: calc(100vh - 16rem - 3rem - 7rem - 6rem);
+
+        max-width: 72vw;
+    }
+
+    ul.slick-dots {
+        bottom: -1rem;
+    }
+}
+
+
+/* === 正文部分 === */
 #st_mn_content {
-    margin: .5rem;
-    width: 100%;
+    width: 90%;
     height: max-content;
+    margin: 2rem 0;
+
+    background: #fbfcfb;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 
@@ -198,9 +303,6 @@ main {
     width: 20%;
     min-width: 16rem;
     height: max-content;
-
-    /* DEBUG */
-    background-image: linear-gradient(0deg, #a8edea 0%, #fed6e3 100%);
 }
 
 #st_mn_ct_side > div {
@@ -209,16 +311,19 @@ main {
 }
 
 .st_mn_ct_sd_works {
-    width: calc(100% - 1rem);
-    margin-top: .5rem;
+    width: calc(100% - 2rem);
+    margin-top: 1rem;
 }
 
 .st_mn_ct_sd_works:last-child {
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 .st_mn_ct_sd_works > a {
     width: 100%;
+
+    border-radius: .5rem;
+    overflow: hidden;
 }
 
 .st_mn_ct_sd_works > a > img {
@@ -227,7 +332,12 @@ main {
 }
 
 .st_mn_ct_sd_wk_info {
-    height: 3rem;
+    height: max-content;
+    margin: .7rem 0 1.2rem 0;
+}
+
+.st_mn_ct_sd_wk_info > * {
+    font-size: .96rem;
 }
 
 
@@ -238,19 +348,59 @@ main {
 */
 
 #st_mn_ct_main {
-    width: calc(80% - 1.5rem);
+    width: calc(80% - 2rem);
     height: max-content;
 
-    margin-left: .5rem;
-
-    /* DEBUG */
-    background-image: linear-gradient(0deg, #37ecba 0%, #72afd3 100%);
+    padding: 1.5rem;
 }
 
 /* ------ お知らせ部分 ------ */
 #st_mn_ct_mn_notice {
     width: 100%;
+    margin-bottom: 2rem;
 }
+
+.st_mn_ct_mn_n_ls_news {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.st_mn_ct_mn_n_ls_news:first-child {
+    padding-top: 0;
+}
+
+.st_mn_ct_mn_n_ls_n_info {
+    padding-bottom: .6rem;
+}
+
+.st_mn_ct_mn_n_ls_n_info > time {
+    font-size: .9rem;
+    font-weight: bold;
+    margin-right: .4rem;
+}
+
+/* お知らせ・商品：グループタイトル */
+#st_mn_ct_mn_n_title {
+    width: 100%;
+}
+
+#st_mn_ct_mn_n_title > span,
+.st_mn_ct_mn_pd_g_title {
+    clear: both;
+
+    width: 100%;
+
+    color: #7e6b50;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    padding-left: 1rem;
+    padding-bottom: .4rem;
+    margin-bottom: 1.25rem;
+    border-bottom: .2rem solid #7e6b50;
+}
+
+
 
 
 /* ------ 商品部分 ------ */
@@ -261,15 +411,7 @@ main {
 /* 商品グループ */
 .st_mn_ct_mn_pd_group {
     width: 100%;
-}
-
-/* グループタイトル */
-.st_mn_ct_mn_pd_g_title {
-    width: 100%;
-    height: 3rem;
-
-    /* DEBUG */
-    background-color: #a8edea;
+    margin-bottom: 1.25rem;
 }
 
 /* グループリスト */
@@ -283,13 +425,19 @@ main {
 
 /* 商品カードユニット */
 .st_mn_ct_mn_pd_g_ls_work {
-    aspect-ratio: 1 / 1.1;
     max-width: 24vh;
     margin: .5rem !important;
     padding: 0;
+}
 
-    /* DEBUG */
-    background-image: linear-gradient(90deg, #e9defa 0%, #fbfcdb 100%);
+.st_mn_ct_mn_pd_g_ls_work > a {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.st_mn_ct_mn_pd_g_ls_work > a > img {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -312,10 +460,7 @@ main {
     #st_mn_ct_side {
         min-height: 20rem;
         overflow: scroll hidden;
-        height: 22rem;
-
-        /* DEBUG */
-        background-image: linear-gradient(90deg, #a8edea 0%, #fed6e3 100%);
+        height: max-content;
     }
 
     #st_mn_ct_side > div {
@@ -327,13 +472,13 @@ main {
     }
 
     .st_mn_ct_sd_works {
-        height: 21rem;
+        height: max-content;
         /* PC仕様リセット */
         width: auto;
 
-        margin-left: .5rem;
+        margin-left: 1rem;
         /* PC仕様リセット */
-        margin-top: 0;
+        margin-top: 1rem;
     }
 
     .st_mn_ct_sd_works:last-child {
@@ -345,7 +490,7 @@ main {
     .st_mn_ct_sd_works > a {
         height: 18rem;
         /* PC仕様リセット */
-        width: auto;
+        width: max-content;
     }
 
     .st_mn_ct_sd_works > a > img {
@@ -368,6 +513,13 @@ main {
         justify-content: center;
     }
 
+    #st_mn_ct_mn_n_title > span,
+    .st_mn_ct_mn_pd_g_title {
+        width: max-content;
+        /* PC仕様リセット */
+        padding-left: 0;
+    }
+
     .st_mn_ct_mn_pd_g_list {
         width: calc(100% - 1rem);
         margin: 0 auto;
@@ -383,12 +535,155 @@ main {
 /*
 * ------------------------------------------
 */
-/* フッター部分 */
+/* ____ フッター部分 ____ */
 footer {
     width: 100%;
-    height: 6rem;
-
-    /* DEBUG */
-    background-color: darkorange;
 }
 
+footer > section {
+    width: 100%;
+}
+
+#st_ft_link {
+    gap: 6rem;
+    margin: 1rem 0;
+}
+
+#st_ft_link > a {
+    color: #5d3b23;
+    font-size: 1.25rem;
+    transition: all 0.2s linear;
+}
+
+#st_ft_link > a:hover {
+    color: #378d15;
+    font-weight: bold;
+}
+
+
+#st_ft_info {
+    color: #5d3b23;
+    background-color: #c1d3c7;
+}
+
+#st_ft_info > span {
+    margin: .6rem 0;
+    font-size: .92rem;
+    font-weight: bold;
+}
+
+@media screen and (orientation: portrait) {
+    #st_ft_link {
+        flex-direction: column;
+        gap: .4rem;
+    }
+
+    #st_ft_link > a {
+        font-size: .9rem;
+    }
+
+    #st_ft_info > span {
+        font-size: .8rem;
+    }
+}
+
+
+/*
+* ------------------------------------------
+*/
+/* ____ その他 ____ */
+
+/*トップに戻る猫*/
+.peek-cat{
+	position: fixed;
+	bottom: 118px;
+	width: 200px;
+	padding: 0;
+	margin: 0;
+	right: -100px;
+	height: auto;
+	z-index: 9999;
+	pointer-events: auto;
+	cursor: pointer;
+	transition: right 0.35s ease;
+}
+.peek-cat.is-show{
+	right: -5px;
+}
+.peek-cat img{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 40px;
+    filter: drop-shadow(.3rem .3rem .3rem rgba(0, 0, 0, 0.4));
+}
+.peek-cat-tip{
+	position: absolute;
+	right: 50px;
+	bottom: 182px;
+	font-size: 14px;
+	padding: 6px 10px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.92);
+	color: #333;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+	opacity: 0;
+	transform: translateX(6px);
+	transition: opacity 0.18s ease, transform 0.18s ease;
+	pointer-events: none;
+	white-space: nowrap;
+}
+.peek-cat.is-show .peek-cat-tip{
+	opacity: 1;
+	transform: translateX(0);
+}
+.peek-cat:hover .peek-cat-tip, .peek-cat:focus-visible .peek-cat-tip{
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* ニュースタグ */
+.fc-news-tag-blank,
+.fc-news-tag-fill {
+    width: max-content;
+
+    transform: scale(0.8);
+
+    color: #777;
+    background: #fff;
+
+    line-height: 1.8;
+    text-align: center;
+
+    padding: 0 .5rem;
+    border: 1px solid #999;
+
+    border-radius: 3px;
+}
+
+.fc-news-tag-fill {
+    color: #fff;
+
+    border-color: transparent;
+
+    background: #c2a384;
+}
+
+/* 正文サイドバー・作品２の処理 */
+#st_mn_ct_side > div > div:nth-child(2) > a {
+    position: relative;
+    display: block;
+}
+
+#st_mn_ct_side > div > div:nth-child(2) > a > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.crossfade-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+}

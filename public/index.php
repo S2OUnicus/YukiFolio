@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 
 	<link rel="icon" href="./favicon.ico">
 
-	<title>YUKINO-ONLINESITE</title>
+	<title>ゆきフォリオ (YUKINO Portfolio)</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +52,9 @@ error_reporting(E_ALL);
         <!-- ナビゲーション -->
         <nav class="uk-flex uk-flex-middle">
             <!-- モバイルメニュー呼び出しボタン -->
-            <button id="st_nv_cmbtn" class="uk-button uk-button-default" type="button" uk-toggle="target: #st_as_mbmenu">≡</button>
+            <button id="st_nv_cmbtn" class="uk-button uk-button-default uk-flex uk-flex-center uk-flex-middle" type="button" uk-toggle="target: #st_as_mbmenu">
+                <span class="uk-flex uk-flex-center uk-flex-middle" uk-icon="table"></span>
+            </button>
 
             <!-- ブランド -->
             <div id="st_nv_brand" class="uk-flex uk-flex-middle">
@@ -71,14 +73,15 @@ error_reporting(E_ALL);
         </nav>
 
         <!-- 主要部分 -->
-        <main class="uk-flex uk-flex-column">
+        <main class="uk-flex uk-flex-column uk-flex-middle">
             <!-- スライダー部分 -->
-            <section id="st_mn_slider" class="uk-flex uk-flex-column">
-                <!-- 画像容器 -->
-                <div id="st_mn_sl_main"></div>
-
-                <!-- スイッチ部分 -->
-                <div id="st_mn_sl_switch"></div>
+            <section id="st_mn_slider">
+                <div class="mainimg-slick">
+                    <div><img src="./image/slide/slide1.png" alt="作品集"></div>
+                    <div><img src="./image/slide/slide2.png" alt="YUKINOチラシ"></div>
+                    <div><img src="./image/slide/slide3.png" alt="LINEスタンプ"></div>
+                    <div><img src="./image/slide/slide4.png" alt="間違い探し"></div>
+                </div>
             </section>
 
             <!-- 正文部分 -->
@@ -90,7 +93,7 @@ error_reporting(E_ALL);
                         <a href="#" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/JIMCHI.png" alt="">
                         </a>
-                        <div class="st_mn_ct_sd_wk_info">
+                        <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title">
                                 JIMCHIサイト制作しました。↓
                             </span>
@@ -101,7 +104,7 @@ error_reporting(E_ALL);
                         <a href="#" class="st_mn_ct_sd_wk_img">
                             <img src="./image/poster/grapes.jpg" alt="">
                         </a>
-                        <div class="st_mn_ct_sd_wk_info">
+                        <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title">
                                 季節限定ハンドクリーム
                             </span>
@@ -109,10 +112,10 @@ error_reporting(E_ALL);
                         </div>
                     </div>
                     <div class="st_mn_ct_sd_works uk-flex uk-flex-column">
-                        <a href="./image/slide/slide4.png" class="st_mn_ct_sd_wk_img">
+                        <a href="./game/diffcat.php" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/spot-the-difference.png" alt="">
                         </a>
-                        <div class="st_mn_ct_sd_wk_info">
+                        <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title">
                                 ↑やってみる？
                             </span>
@@ -123,7 +126,7 @@ error_reporting(E_ALL);
                         <a href="#" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/exhibition.jpg" alt="">
                         </a>
-                        <div class="st_mn_ct_sd_wk_info">
+                        <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title">
                                 作品展示会が開催決定!
                             </span>
@@ -134,7 +137,7 @@ error_reporting(E_ALL);
                         <a href="#" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/portfolio.png" alt="">
                         </a>
-                        <div class="st_mn_ct_sd_wk_info">
+                        <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title"></span>
                             <a href="./PDF/portfolio.pdf" class="st_mn_ct_sd_wk_inf_link">
                                 中身を見る
@@ -145,7 +148,7 @@ error_reporting(E_ALL);
                         <a href="#" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/LINE-stamp.png" alt="">
                         </a>
-                        <div class="st_mn_ct_sd_wk_info">
+                        <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title">
                                 LINEスタンプ<br>好評発売中↓
                             </span>
@@ -161,6 +164,54 @@ error_reporting(E_ALL);
                 <div id="st_mn_ct_main">
                     <!-- お知らせ部分 -->
                     <section id="st_mn_ct_mn_notice">
+                        <div id="st_mn_ct_mn_n_title" class="uk-flex uk-flex-middle uk-flex-center">
+                            <span>お知らせ</span>
+                        </div>
+                        <div id="st_mn_ct_mn_n_list">
+                            <!-- 新聞箇条 -->
+                            <div class="st_mn_ct_mn_n_ls_news">
+                                <!-- 一行目：日付・ラベル -->
+                                <div class="st_mn_ct_mn_n_ls_n_info uk-flex uk-flex-middle">
+                                    <time datetime="2026-03-23">2026/03/23</time>
+                                    <span class="fc-news-tag-blank st_mn_ct_mn_n_ls_n_inf_label uk-flex uk-flex-middle uk-flex-center">
+                                        ホームページ公開
+                                    </span>
+                                </div>
+                                <!-- 二行目以降：情報 -->
+                                <div class="st_mn_ct_mn_n_ls_n_text uk-flex uk-flex-column">
+                                    <span>
+                                        YUKINO-オンラインホームページが公開されました！
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="st_mn_ct_mn_n_ls_news">
+                                <div class="st_mn_ct_mn_n_ls_n_info uk-flex uk-flex-middle">
+                                    <time datetime="2026-01-23">2026/01/23</time>
+                                    <span class="fc-news-tag-fill st_mn_ct_mn_n_ls_n_inf_label">
+                                        サイト制作
+                                    </span>
+                                </div>
+                                <div class="st_mn_ct_mn_n_ls_n_text uk-flex uk-flex-column">
+                                    <span>
+                                        焼肉店JIMCH様のホームページを製作させていただきました！<a href="./JIMUCTI/loader.html"> → JIMCHIサイト</a>
+                                    </span>
+                                    <span>
+                                        ※実案件のため一部非公開（現在クライアントと調整中）
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="st_mn_ct_mn_n_ls_news">
+                                <div class="st_mn_ct_mn_n_ls_n_info uk-flex uk-flex-middle">
+                                    <time datetime="2025-12-16">2025/12/16</time>
+                                    <span class="fc-news-tag-fill st_mn_ct_mn_n_ls_n_inf_label">
+                                        ポートフォリオPDF
+                                    </span>
+                                </div>
+                                <div class="st_mn_ct_mn_n_ls_n_text uk-flex uk-flex-column">
+                                    <span>ポートフォリオのPDFを作成しました！<a href="PDF/portfolio.pdf" target="_blank"> PDFを見る</a></span>
+                                </div>
+                            </div>
+                        </div>
                     </section>
 
                     <!-- 商品部分 -->
@@ -174,21 +225,29 @@ error_reporting(E_ALL);
                             <!-- グループリスト -->
                             <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
                                 <!-- 商品カードユニット -->
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/1.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        ハンドクリーム（苺の香り）
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/2.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        ハンドクリーム（桃の香り）
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/3.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        ハンドクリーム（ぶどうの香り）
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/4.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        ハンドクリーム（レモンの香り）
+                                    </span>
                                 </div>
                             </section>
                         </div>
@@ -201,13 +260,17 @@ error_reporting(E_ALL);
                             </div>
                             <!-- グループリスト -->
                             <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/5.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        音×自由-Tシャツ-
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/6.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        音×自由-パンツ
+                                    </span>
                                 </div>
                             </section>
                         </div>
@@ -220,13 +283,17 @@ error_reporting(E_ALL);
                             </div>
                             <!-- グループリスト -->
                             <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/7.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        HIPHOPかるた箱
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/8.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        HIPHOPかるたカード
+                                    </span>
                                 </div>
                             </section>
                         </div>
@@ -239,17 +306,23 @@ error_reporting(E_ALL);
                             </div>
                             <!-- グループリスト -->
                             <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/9.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        ロゴ１
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/10.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        ロゴ２
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/11.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        作品集
+                                    </span>
                                 </div>
                             </section>
                         </div>
@@ -262,17 +335,23 @@ error_reporting(E_ALL);
                             </div>
                             <!-- グループリスト -->
                             <section class="st_mn_ct_mn_pd_g_list uk-flex" uk-grid>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/12.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        名刺
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/13.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        LINEスタンプ
+                                    </span>
                                 </div>
-                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-width-1-3@s uk-width-1-4@m">
-                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="" alt=""></a>
-                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title"></span>
+                                <div class="st_mn_ct_mn_pd_g_ls_work uk-flex uk-flex-column uk-flex-middle uk-width-1-3@s uk-width-1-4@m">
+                                    <a href="#" class="st_mn_ct_mn_pd_g_ls_wk_img"><img src="./image/top/14.png" alt=""></a>
+                                    <span class="st_mn_ct_mn_pd_g_ls_wk_title">
+                                        入浴剤
+                                    </span>
                                 </div>
                             </section>
                         </div>
@@ -286,25 +365,33 @@ error_reporting(E_ALL);
             <div id="st_as_mbmenu" class="" uk-offcanvas="overlay:true">
                 <div class="uk-offcanvas-bar">
                     <ul class="uk-nav uk-nav-default">
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li class="uk-parent">
-                            <a href="#">Parent</a>
-                            <ul class="uk-nav-sub">
-                                <li><a href="#">Sub item</a></li>
-                                <li><a href="#">Sub item</a></li>
-                            </ul>
-                        </li>
-                        <li class="uk-nav-header">Header</li>
-                        <li>
-                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a>
-                        </li>
+                        <li class="uk-active"><a href="#">ゆきフォリオ（YUKINO Portfolio）</a></li>
+                        <li class="uk-nav-header">メニュー</li>
+
                         <li class="uk-nav-divider"></li>
+                        <br>
+
                         <li>
-                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a>
+                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: home"></span> Index</a>
                         </li>
+                        <li>
+                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: image"></span> Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: user"></span> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: question"></span> FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="uk-margin-small-right" uk-icon="icon: comments"></span> Inquiry</a>
+                        </li>
+
+                        <br>
+                        <li class="uk-nav-divider"></li>
+
+                        <li>Version: v0.2.1 (Built 260408 025801+09)</li>
+                        <li>@S2OUnicus</li>
                     </ul>
                 </div>
             </div>
@@ -312,7 +399,25 @@ error_reporting(E_ALL);
 
         <!-- フッター -->
         <footer class="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
+            <section id="st_ft_link" class="uk-flex uk-flex-middle uk-flex-center">
+				<a href="index.html">トップ</a>
+				<a href="gallery.html">ギャラリー</a>
+				<a href="profile.html">プロフィール</a>
+				<a href="FAQ.html">質問</a>
+				<a href="contact.html">お問い合わせ</a>
+			</section>
+
+            <section id="st_ft_info" class="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
+                <span id="st_ft_inf_copyright" class="uk-flex uk-flex-middle uk-flex-center">
+                    © 2026 ゆきフォリオ (YUKINO Portfolio). All Rights Reserved.
+                </span>
+            </section>
         </footer>
+    </div>
+
+    <div class="peek-cat" id="peekCat" role="button" aria-label="トップに戻る" tabindex="0">
+        <img src="image/materiaru/kinonya.png" alt="kinonya">
+        <span class="peek-cat-tip">トップに戻る</span>
     </div>
 
     <!-- ------------------------------------------------------- -->
@@ -327,8 +432,8 @@ error_reporting(E_ALL);
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- User JS -->
-    <script defer src="./js/Return-to-top.js"></script>
-	<script defer src="./js/slick.js"></script>
-	<script defer src="./js/slideshow.js"></script>
+    <script defer src="./js/Return-to-top.js?<?= time(); ?>"></script>
+	<script defer src="./js/slick.js?<?= time(); ?>"></script>
+	<script defer src="./js/slideshow.js?<?= time(); ?>"></script>
 </body>
 </html>
