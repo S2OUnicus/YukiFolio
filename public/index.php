@@ -77,10 +77,26 @@ error_reporting(E_ALL);
             <!-- スライダー部分 -->
             <section id="st_mn_slider">
                 <div class="mainimg-slick">
-                    <div><img src="./image/slide/slide1.png" alt="作品集"></div>
-                    <div><img src="./image/slide/slide2.png" alt="YUKINOチラシ"></div>
-                    <div><a href="https://store.line.me/stickershop/product/31223760/ja"><img src="./image/slide/slide3.png" alt="LINEスタンプ"></a></div>
-                    <div><a href="./game/diffcat.php"><img src="./image/slide/slide4.png" alt="間違い探し"></a></div>
+                    <div>
+                        <a href="./gallery">
+                            <img src="./image/slide/slide1.png" alt="作品集">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./standalone/PDF/portfolio.pdf">
+                            <img src="./image/slide/slide2.png" alt="YUKINOチラシ">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://store.line.me/stickershop/product/31223760/ja">
+                            <img src="./image/slide/slide3.png" alt="LINEスタンプ">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="./game/diffcat.php">
+                            <img src="./image/slide/slide4.png" alt="間違い探し">
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -88,16 +104,16 @@ error_reporting(E_ALL);
             <section id="st_mn_content" class="uk-flex">
                 <!-- 正文サイトバー部分 -->
                 <div id="st_mn_ct_side">
-                    <div class="uk-flex uk-flex-column uk-flex-middle">
+                    <div class="uk-flex uk-flex-column uk-flex-top">
                         <div class="st_mn_ct_sd_works uk-flex uk-flex-column">
-                        <a href="#" class="st_mn_ct_sd_wk_img">
-                            <img src="./image/others/JIMCHI.png" alt="">
+                        <a href="./standalone/JIMUCTI/loader.html" class="st_mn_ct_sd_wk_img">
+                            <img src="./image/others/JIMCHI.png" alt="JIMCHI">
                         </a>
                         <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title">
                                 JIMCHIサイト制作しました。↓
                             </span>
-                            <a href="./JIMUCTI/loader.html" class="st_mn_ct_sd_wk_inf_link"></a>
+                            <a href="./standalone/JIMUCTI/loader.html" class="st_mn_ct_sd_wk_inf_link"></a>
                         </div>
                     </div>
                     <div class="st_mn_ct_sd_works uk-flex uk-flex-column">
@@ -134,12 +150,12 @@ error_reporting(E_ALL);
                         </div>
                     </div>
                     <div class="st_mn_ct_sd_works uk-flex uk-flex-column">
-                        <a href="./PDF/portfolio.pdf" class="st_mn_ct_sd_wk_img">
+                        <a href="./standalone/PDF/portfolio.pdf" class="st_mn_ct_sd_wk_img">
                             <img src="./image/others/portfolio.png" alt="">
                         </a>
                         <div class="st_mn_ct_sd_wk_info uk-flex uk-flex-column uk-flex-middle">
                             <span class="st_mn_ct_sd_wk_inf_title"></span>
-                            <a href="./PDF/portfolio.pdf" class="st_mn_ct_sd_wk_inf_link">
+                            <a href="./standalone/PDF/portfolio.pdf" class="st_mn_ct_sd_wk_inf_link">
                                 中身を見る
                             </a>
                         </div>
@@ -208,7 +224,7 @@ error_reporting(E_ALL);
                                     </span>
                                 </div>
                                 <div class="st_mn_ct_mn_n_ls_n_text uk-flex uk-flex-column">
-                                    <span>ポートフォリオのPDFを作成しました！<a href="PDF/portfolio.pdf" target="_blank"> PDFを見る</a></span>
+                                    <span>ポートフォリオのPDFを作成しました！<a href="./standalone/PDF/portfolio.pdf" target="_blank"> PDFを見る</a></span>
                                 </div>
                             </div>
                         </div>
@@ -415,10 +431,21 @@ error_reporting(E_ALL);
         </footer>
     </div>
 
-    <div class="peek-cat" id="peekCat" role="button" aria-label="トップに戻る" tabindex="0">
-        <img src="image/materiaru/kinonya.png" alt="kinonya">
-        <span class="peek-cat-tip">トップに戻る</span>
-    </div>
+    <div class="peek-cat" id="peekCat">
+	<img
+		id="peekCatImage"
+		class="peek-cat-image"
+		src="image/materiaru/kinonya.png"
+		alt="トップに戻る"
+		role="button"
+		tabindex="0"
+		decoding="async"
+		draggable="false"
+	>
+	<button type="button" class="peek-cat-tip" id="peekCatTip">
+		トップに戻る
+	</button>
+</div>
 
     <!-- ------------------------------------------------------- -->
     <!-- ------------------------------------------------------- -->

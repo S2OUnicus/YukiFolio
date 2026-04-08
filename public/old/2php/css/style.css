@@ -130,6 +130,7 @@ ul.slick-dots li.slick-active button{
 	background: #7e6b50;
 }
 /*トップに戻る猫*/
+/*トップに戻る猫*/
 .peek-cat{
 	position: fixed;
 	bottom: 118px;
@@ -151,7 +152,7 @@ ul.slick-dots li.slick-active button{
 	height: auto;
 	display: block;
 	margin: 40px;
-	z-index: 9999;
+    filter: drop-shadow(.3rem .3rem .3rem rgba(0, 0, 0, 0.4));
 }
 .peek-cat-tip{
 	position: absolute;

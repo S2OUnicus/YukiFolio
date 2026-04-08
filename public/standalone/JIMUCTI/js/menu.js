@@ -1,0 +1,97 @@
+jQuery(function ($) {
+	function changeImage() {
+		var $graphic = $('#graphic ul');
+		var $frontmost = $graphic.children('.now');
+		var $next;
+		if($frontmost.next()[0] != undefined){
+			$next = $frontmost.next();
+		} else {
+			$next = $graphic.children().first();
+		}
+		$frontmost.removeClass('now');
+		$next.addClass('now');
+		
+	}
+	setInterval(changeImage, 4000);
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const closeDetail = (detail) => {
+    detail.classList.remove("is-open");
+    detail.style.maxHeight = "0px";
+  };
+
+  const openDetail = (detail) => {
+    detail.classList.add("is-open");
+    if (prefersReduced) {
+      detail.style.maxHeight = "none";
+      return;
+    }
+    detail.style.maxHeight = detail.scrollHeight + "px";
+  };
+
+  document.querySelectorAll(".menu-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const row = button.closest(".menu-row");
+      const detail = row?.querySelector(".menu-detail");
+      if (!detail) return;
+
+      const isOpen = detail.classList.contains("is-open");
+
+      if (isOpen) {
+        if (!prefersReduced) {
+          detail.style.maxHeight = detail.scrollHeight + "px";
+          requestAnimationFrame(() => closeDetail(detail));
+        } else {
+          closeDetail(detail);
+        }
+      } else {
+        openDetail(detail);
+      }
+
+      button.style.transform = isOpen ? "rotate(0deg)" : "rotate(90deg)";
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (prefersReduced) return;
+    document.querySelectorAll(".menu-detail.is-open").forEach((detail) => {
+      detail.style.maxHeight = detail.scrollHeight + "px";
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("imgModalImg");
+  if (!modal || !modalImg) return;
+
+  const open = (src, alt) => {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    modalImg.src = src;
+    modalImg.alt = alt || "";
+  };
+
+  const close = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    modalImg.src = "";
+    modalImg.alt = "";
+  };
+
+  document.querySelectorAll(".menu-detail-img").forEach(img => {
+    img.addEventListener("click", () => open(img.getAttribute("src"), img.getAttribute("alt")));
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+});
