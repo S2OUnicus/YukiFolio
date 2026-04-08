@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 
 	<link rel="icon" href="./favicon.ico">
 
-	<title>ゆきフォリオ (YUKINO Portfolio)</title>
+	<title>質問＆回答 - ゆきフォリオ (YUKINO Portfolio)</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@ error_reporting(E_ALL);
 
     <!-- Base Style -->
     <link rel="stylesheet" href="./css/base.css?<?= time(); ?>">
-    <link rel="stylesheet" href="./css/main_index.css?<?= time(); ?>">
+    <link rel="stylesheet" href="./css/main_faq.css?<?= time(); ?>">
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -75,36 +75,9 @@ error_reporting(E_ALL);
 
         <!-- 主要部分 -->
         <main class="uk-flex uk-flex-column uk-flex-middle">
-            <!-- スライダー部分 -->
-            <section id="st_mn_slider">
-                <div class="mainimg-slick">
-                    <div>
-                        <a href="./gallery">
-                            <img src="./image/slide/slide1.png" alt="作品集">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="./standalone/PDF/portfolio.pdf">
-                            <img src="./image/slide/slide2.png" alt="YUKINOチラシ">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://store.line.me/stickershop/product/31223760/ja">
-                            <img src="./image/slide/slide3.png" alt="LINEスタンプ">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="./game/diffcat.php">
-                            <img src="./image/slide/slide4.png" alt="間違い探し">
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 正文部分 -->
             <section id="st_mn_content" class="uk-flex">
 <?
-require_once "page/index_inner.phtml";
+require_once "page/faq.phtml";
 ?>
             </section>
         </main>
@@ -198,7 +171,6 @@ require_once "page/index_inner.phtml";
 
     <!-- User JS -->
     <script defer src="./js/Return-to-top.js?<?= time(); ?>"></script>
-	<script defer src="./js/slick.js?<?= time(); ?>"></script>
-	<script defer src="./js/slideshow.js?<?= time(); ?>"></script>
+    <script defer src="./js/p_faq.js?<?= time(); ?>"></script>
 </body>
 </html>

@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+/*
+* ------------------------------------------
+*/
+
+/* === 正文部分 === */
+#st_mn_content {
+    padding: 0;
+}
+
+/*
+* ========================
+*     正文サイドバー部分
+* ========================
+*/
+
+#st_mn_ct_side {
+    width: 20%;
+    min-width: 16rem;
+    height: max-content;
+}
+
+#st_mn_ct_side > div {
+    width: 100%;
+    height: max-content;
+}
+
+.st_mn_ct_sd_works {
+    width: calc(100% - 2.4rem);
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.st_mn_ct_sd_works:first-child {
+    margin-top: 1.5rem;
+}
+
+.st_mn_ct_sd_works:last-child {
+    margin-bottom: 1rem;
+}
+
+.st_mn_ct_sd_works > a {
+    width: 100%;
+
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.st_mn_ct_sd_works > a > img {
+    width: 100%;
+    height: max-content;
+}
+
+.st_mn_ct_sd_wk_info {
+    height: max-content;
+    margin: .7rem 0 1.2rem 0;
+}
+
+.st_mn_ct_sd_wk_info > * {
+    font-size: .96rem;
+}
+
+
+/*
+* ========================
+*       正文メイン部分
+* ========================
+*/
+
+#st_mn_ct_main {
+    width: calc(80% - 2rem);
+    height: max-content;
+
+    padding: 1.5rem;
+}
+
+/* ------ お知らせ部分 ------ */
+#st_mn_ct_mn_notice {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* お知らせ・商品：グループタイトル */
+#st_mn_ct_mn_n_title {
+    width: 100%;
+}
+
+#st_mn_ct_mn_n_title > span {
+    clear: both;
+
+    width: 100%;
+
+    color: #7e6b50;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    padding-left: 1rem;
+    padding-bottom: .4rem;
+    margin-bottom: 1.25rem;
+    border-bottom: .2rem solid #7e6b50;
+}
+
+
+/*
+* ========================
+*    正文部分レスポンシブ
+* ========================
+*/
+
+@media screen and (orientation: portrait) {
+    /* === 正文サイドバー部分 === */
+    #st_mn_content {
+        flex-direction: column;
+    }
+
+    #st_mn_ct_side, #st_mn_ct_main {
+        width: 100%;
+    }
+
+    #st_mn_ct_side {
+        min-height: 24rem;
+        overflow: scroll hidden;
+        height: max-content;
+    }
+
+    #st_mn_ct_side > div {
+        flex-direction: row;
+        padding-top: 1rem;
+
+        /* PC仕様リセット */
+        width: max-content;
+        height: 100%;
+    }
+
+    /* ハンドクリームモバイル広さ修正用だけ */
+    #st_mn_ct_side > div > div:nth-child(2) > a > * {
+        max-width: 13rem;
+    }
+
+    .st_mn_ct_sd_works {
+        height: max-content;
+        /* PC仕様リセット */
+        width: auto;
+    }
+
+    .st_mn_ct_sd_works:first-child {
+        /* PC仕様リセット */
+        margin-top: 1rem;
+    }
+
+    .st_mn_ct_sd_works:last-child {
+        margin-right: .5rem;
+        /* PC仕様リセット */
+        margin-bottom: 0;
+    }
+
+    .st_mn_ct_sd_works > a {
+        height: 18rem;
+        /* PC仕様リセット */
+        width: max-content;
+    }
+
+    .st_mn_ct_sd_works > a > img {
+        height: 100%;
+        /* PC仕様リセット */
+        width: max-content;
+    }
+
+    .st_mn_ct_sd_wk_info > * {
+        font-size: .9rem;
+    }
+
+
+    /* === 正文メイン部分 === */
+    #st_mn_ct_main {
+        height: calc(100% - 16rem);
+
+        /* PC仕様リセット */
+        margin-left: 0;
+    }
+
+    #st_mn_ct_mn_n_title > span {
+        width: max-content;
+        /* PC仕様リセット */
+        padding-left: 0;
+    }
+}

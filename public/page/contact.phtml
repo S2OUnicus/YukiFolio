@@ -1,0 +1,80 @@
+<article class="contact-page uk-section uk-section-muted">
+    <div class="uk-container uk-container-large">
+        <div class="uk-grid uk-flex-middle uk-grid-large" uk-grid>
+            <div class="uk-width-1-1 uk-width-2-5@l">
+                <div class="contact-hero">
+                    <span class="contact-badge">CONTACT</span>
+                    <h1 class="inquiry">お問い合わせ</h1>
+                    <p class="contact-lead">アイデアやアドバイス、製作者に聞きたいことなどを募集しております。
+                        <br>お気軽にお問い合わせください。</p>
+                    <div class="contact-info uk-card uk-card-small uk-card-body">
+                        <ul class="uk-list uk-list-bullet">
+                            <li>必要事項を記入し、「確認する」をクリックしてください。</li>
+                            <li>ご登録いただいた個人情報は、お問い合わせ内容の確認以外には使用いたしません。</li></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-1-1 uk-width-3-5@l">
+                <div class="uk-card uk-card-default uk-card-body contact-card">
+                    <form action="#" class="uk-form-stacked contact-form">
+                        <div class="uk-grid-small uk-child-width-1-2@m" uk-grid>
+                            <div>
+                                <label class="uk-form-label form-label" for="name">ニックネーム
+                                    <span class="required-badge">必須</span></label>
+                                <div class="uk-form-controls">
+                                    <input id="name" class="uk-input contact-input" type="text" name="name" required></div>
+                            </div>
+                            <div>
+                                <label class="uk-form-label form-label" for="mail">メールアドレス
+                                    <span class="required-badge">必須</span></label>
+                                <div class="uk-form-controls">
+                                    <input id="mail" class="uk-input contact-input" type="email" name="mail" required></div>
+                            </div>
+                        </div>
+                        <div class="uk-margin-medium-top">
+                            <label class="uk-form-label form-label">お問い合わせ種類</label>
+                            <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+                                <div>
+                                    <label class="choice-card">
+                                        <input class="uk-radio" type="radio" name="kind" value="0">
+                                        <span>アイデア</span></label>
+                                </div>
+                                <div>
+                                    <label class="choice-card">
+                                        <input class="uk-radio" type="radio" name="kind" value="1">
+                                        <span>アドバイス</span></label>
+                                </div>
+                                <div>
+                                    <label class="choice-card">
+                                        <input class="uk-radio" type="radio" name="kind" value="2">
+                                        <span>質問</span></label>
+                                </div>
+                                <div>
+                                    <label class="choice-card">
+                                        <input class="uk-radio" type="radio" name="kind" value="3">
+                                        <span>その他</span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-margin-medium-top">
+                            <label class="uk-form-label form-label" for="comment">内容</label>
+                            <div class="uk-form-controls">
+                                <textarea id="comment" name="comment" class="uk-textarea contact-textarea" rows="8"></textarea>
+                            </div>
+                        </div>
+                        <div class="uk-margin-medium-top contact-checks">
+                            <label class="uk-display-block uk-margin-small-bottom">
+                                <input class="uk-checkbox" type="checkbox" name="newsletter">
+                                <span>メールマガジンの配信を希望</span></label>
+                            <label class="uk-display-block">
+                                <input class="uk-checkbox" type="checkbox" name="updates">
+                                <span>今後の更新情報を受け取る</span></label>
+                        </div>
+                        <div class="uk-margin-large-top uk-text-center">
+                            <button type="submit" class="uk-button uk-button-primary contact-button">確認する</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
