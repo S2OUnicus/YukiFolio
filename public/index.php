@@ -94,7 +94,7 @@ error_reporting(E_ALL);
                         </a>
                     </div>
                     <div>
-                        <a href="./game/diffcat.php">
+                        <a href="./game/diffcat">
                             <img src="./image/slide/slide4.png" alt="間違い探し">
                         </a>
                     </div>
@@ -200,5 +200,6 @@ require_once "page/index_inner.phtml";
     <script defer src="./js/Return-to-top.js?<?= time(); ?>"></script>
 	<script defer src="./js/slick.js?<?= time(); ?>"></script>
 	<script defer src="./js/slideshow.js?<?= time(); ?>"></script>
+    <script defer src="./js/p_index.js?<?= time(); ?>"></script>
 </body>
 </html>

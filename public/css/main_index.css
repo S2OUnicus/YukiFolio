@@ -219,6 +219,15 @@ ul.slick-dots li.slick-active button {
     border-bottom: .2rem solid #7e6b50;
 }
 
+/* セールスページ */
+#spec_sells_handcream:hover {
+    border: .2rem solid #7e6b50;
+    color: crimson;
+    background: #eafcff;
+    transition: all .2s ease-in-out;
+    border-radius: .8rem;
+}
+
 
 /* ------ 商品部分 ------ */
 #st_mn_ct_mn_product {
