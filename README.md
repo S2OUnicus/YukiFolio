@@ -1,6 +1,8 @@
-> レスポンシブ対応した個人ポートフォリオサイト
+> **レスポンシブ対応した個人ポートフォリオサイト**
 
-![YUKINO Portfolio - Open Graph](repository-open-graph-half.png)
+![YUKINO Portfolio - Open Graph](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/repository-open-graph-half.png)
+
+> ゆきフォリオ (YUKINO Portfolio)
 
 # イメージ
 
