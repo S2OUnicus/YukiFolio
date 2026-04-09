@@ -10,7 +10,7 @@ $fallbackFile = $baseDir . '/common/nowork.php';
 
 $id = isset($_GET['id']) ? (string)$_GET['id'] : '';
 
-// id なしなら gallery へ
+// /work や /work/ のように id がなければ gallery へ
 if ($id === '') {
     header('Location: /gallery', true, 302);
     exit;
@@ -23,21 +23,62 @@ if (!ctype_digit($id)) {
     exit;
 }
 
-$targetFile = $pageDir . '/' . $id . '.phtml';
+$pageFile = $pageDir . '/' . $id . '.phtml';
 
-if (!is_file($targetFile) || !is_readable($targetFile)) {
+if (!is_file($pageFile) || !is_readable($pageFile)) {
     http_response_code(404);
     require_once $fallbackFile;
     exit;
 }
 
 $realPageDir = realpath($pageDir);
-$realTarget  = realpath($targetFile);
+$realPageFile = realpath($pageFile);
 
-if ($realPageDir === false || $realTarget === false || strpos($realTarget, $realPageDir . DIRECTORY_SEPARATOR) !== 0) {
+if (
+    $realPageDir === false ||
+    $realPageFile === false ||
+    strpos($realPageFile, $realPageDir . DIRECTORY_SEPARATOR) !== 0
+) {
     http_response_code(500);
     require_once $fallbackFile;
     exit;
+}
+
+// 初期値
+$title    = '';
+$label    = '';
+$imgurl   = '';
+
+$target   = '';
+$mokuteki = '';
+$concept  = '';
+$point    = '';
+$tool     = '';
+
+// 作品データ読み込み
+require $realPageFile;
+
+// 出力用 helper
+function h(?string $value): string
+{
+    return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
+}
+
+// img src 用 helper
+function safe_img_url(?string $value): string
+{
+    $value = trim((string)$value);
+
+    if ($value === '') {
+        return '/assets/img/common/noimage.png';
+    }
+
+    // javascript: などを避ける
+    if (preg_match('/^\s*javascript:/i', $value)) {
+        return '/assets/img/common/noimage.png';
+    }
+
+    return $value;
 }
 ?>
 <!DOCTYPE html>
@@ -60,7 +101,7 @@ if ($realPageDir === false || $realTarget === false || strpos($realTarget, $real
 
 	<link rel="icon" href="../favicon.ico">
 
-	<title>ゆきフォリオ (YUKINO Portfolio)</title>
+	<title><?= h($title) ?> - ゆきフォリオ (YUKINO Portfolio)</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,7 +156,7 @@ if ($realPageDir === false || $realTarget === false || strpos($realTarget, $real
             <section id="st_mn_content" class="uk-flex">
 <?php
 // 正常時
-require_once $realTarget;
+require_once "common/index_inner.phtml";
 ?>
             </section>
         </main>
@@ -184,7 +225,7 @@ require_once $realTarget;
 	<img
 		id="peekCatImage"
 		class="peek-cat-image"
-		src="image/materiaru/kinonya.png"
+		src="../image/materiaru/kinonya.png"
 		alt="トップに戻る"
 		role="button"
 		tabindex="0"

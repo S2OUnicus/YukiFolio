@@ -1,0 +1,28 @@
+<div id="app-shell">
+    <section class="toolbar" role="toolbar" aria-label="PDF 操作ツールバー">
+        <div class="toolbar-group toolbar-group--nav">
+            <button id="prevPageBtn" class="btn" type="button" aria-label="前のページ">◀</button>
+            <div class="page-box">
+                <input id="pageNumberInput" class="page-input" type="number" min="1" step="1" inputmode="numeric" aria-label="ページ番号" />
+                <span class="page-total">/
+                    <span id="pageCount">0</span></span>
+            </div>
+            <button id="nextPageBtn" class="btn" type="button" aria-label="次のページ">▶</button></div>
+        <div class="toolbar-group toolbar-group--zoom">
+            <button id="zoomOutBtn" class="btn" type="button" aria-label="縮小">－</button>
+            <button id="fitWidthBtn" class="btn btn--wide" type="button">幅に合わせる</button>
+            <button id="fitHeightBtn" class="btn btn--wide" type="button">高さに合わせる</button>
+            <button id="zoomInBtn" class="btn" type="button" aria-label="拡大">＋</button></div>
+        <div class="toolbar-group toolbar-group--actions">
+            <button id="printBtn" class="btn btn--primary" type="button">印刷</button></div>
+    </section>
+    <section id="viewerContainer" class="viewer-container" aria-label="PDF 表示エリア">
+        <div class="viewer-stage">
+            <div id="pageSurface" class="page-surface">
+                <canvas id="pdfCanvas"></canvas>
+            </div>
+            <div id="loadingState" class="overlay">読み込み中...</div>
+            <div id="errorState" class="overlay overlay--error is-hidden" role="alert"></div>
+        </div>
+    </section>
+</div>

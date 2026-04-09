@@ -21,9 +21,9 @@ error_reporting(E_ALL);
 	<meta name="theme-color" content="#c2a384">
 	<meta name="author" content="Yukino, @S2OUnicus">
 
-	<link rel="icon" href="../favicon.ico">
+	<link rel="icon" href="./favicon.ico">
 
-	<title>作品が見つかりません - ゆきフォリオ (YUKINO Portfolio)</title>
+	<title>ゆきフォリオ (YUKINO Portfolio)</title>
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,8 +36,8 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Base Style -->
-    <link rel="stylesheet" href="../css/base.css?<?= time(); ?>">
-    <link rel="stylesheet" href="../css/work_no.css?<?= time(); ?>">
+    <link rel="stylesheet" href="./css/base.css?<?= time(); ?>">
+    <link rel="stylesheet" href="./css/portfolio.css?<?= time(); ?>">
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -60,25 +60,24 @@ error_reporting(E_ALL);
             <!-- ブランド -->
             <div id="st_nv_brand" class="uk-flex uk-flex-middle">
                 <!-- サイトロゴ -->
-                <a id="st_nv_b_logo" href="../"></a>
+                <a id="st_nv_b_logo" href="./"></a>
             </div>
 
             <!-- PCメニュー -->
             <div id="st_nv_menu" class="uk-flex uk-flex-middle uk-flex-right">
-                <a href="../" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:トップ（ホーム）;pos:bottom">Index</a>
-                <a href="../gallery" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:ギャラリー（作品集）;pos:bottom">Gallery</a>
-                <a href="../profile" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:プロフィール;pos:bottom">Profile</a>
-                <a href="../FAQ" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:質問＆回答;pos:bottom">FAQ</a>
-                <a href="../contact" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:お問い合わせ;pos:bottom">Inquiry</a>
+                <a href="./" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:トップ（ホーム）;pos:bottom">Index</a>
+                <a href="./gallery" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:ギャラリー（作品集）;pos:bottom">Gallery</a>
+                <a href="./profile" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:プロフィール;pos:bottom">Profile</a>
+                <a href="./FAQ" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:質問＆回答;pos:bottom">FAQ</a>
+                <a href="./contact" class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center" uk-tooltip="title:お問い合わせ;pos:bottom">Inquiry</a>
             </div>
         </nav>
 
         <!-- 主要部分 -->
         <main class="uk-flex uk-flex-column uk-flex-middle">
             <section id="st_mn_content" class="uk-flex">
-<?php
-// 正常時
-require_once "page/inner.phtml";
+<?
+require_once "page/portfolio.phtml";
 ?>
             </section>
         </main>
@@ -89,8 +88,8 @@ require_once "page/inner.phtml";
                 <div class="uk-offcanvas-bar">
                     <ul class="uk-nav uk-nav-default" uk-margin>
                         <li id="st_as_m_title" class="uk-active">
-                            <a href="../" class="uk-flex uk-flex-middle">
-                                <img id="st_as_m_tt_logo" src="../favicon.ico" alt="">
+                            <a href="./" class="uk-flex uk-flex-middle">
+                                <img id="st_as_m_tt_logo" src="./favicon.ico" alt="">
                                 <div class="uk-flex uk-flex-column uk-margin-left">
                                     <span class="uk-text-default uk-text-bold">ゆきフォリオ</span>
                                     <span class="uk-text-meta">YUKINO Portfolio</span>
@@ -102,19 +101,19 @@ require_once "page/inner.phtml";
                         <li class="uk-nav-divider uk-margin-small-top uk-margin-small-bottom"></li>
 
                         <li>
-                            <a href="../" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: home"></span> ホーム<span class="uk-badge">Index</span></a>
+                            <a href="./" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: home"></span> ホーム<span class="uk-badge">Index</span></a>
                         </li>
                         <li>
-                            <a href="../gallery" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: image"></span> 作品一覧<span class="uk-badge">Gallery</span></a>
+                            <a href="./gallery" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: image"></span> 作品一覧<span class="uk-badge">Gallery</span></a>
                         </li>
                         <li>
-                            <a href="../profile" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: user"></span> プロフィール<span class="uk-badge">Profile</span></a>
+                            <a href="./profile" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: user"></span> プロフィール<span class="uk-badge">Profile</span></a>
                         </li>
                         <li>
-                            <a href="../FAQ" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: question"></span> 質問＆回答<span class="uk-badge">FAQ</span></a>
+                            <a href="./FAQ" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: question"></span> 質問＆回答<span class="uk-badge">FAQ</span></a>
                         </li>
                         <li>
-                            <a href="../contact" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: comments"></span> お問い合わせ<span class="uk-badge">Inquiry</span></a>
+                            <a href="./contact" class="uk-flex uk-flex-middle"><span class="uk-margin-small-right" uk-icon="icon: comments"></span> お問い合わせ<span class="uk-badge">Inquiry</span></a>
                         </li>
 
                         <li class="uk-nav-divider uk-margin-small-top uk-margin-small-bottom"></li>
@@ -128,16 +127,16 @@ require_once "page/inner.phtml";
         <!-- フッター -->
         <footer class="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
             <section id="st_ft_link" class="uk-flex uk-flex-middle uk-flex-center">
-				<a href="../index">トップ</a>
-				<a href="../gallery">ギャラリー（作品集）</a>
-				<a href="../profile">プロフィール</a>
-				<a href="../FAQ">質問＆回答</a>
-				<a href="../contact">お問い合わせ</a>
+				<a href="./index">トップ</a>
+				<a href="./gallery">ギャラリー（作品集）</a>
+				<a href="./profile">プロフィール</a>
+				<a href="./FAQ">質問＆回答</a>
+				<a href="./contact">お問い合わせ</a>
 			</section>
 
             <section id="st_ft_info" class="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
                 <span id="st_ft_inf_copyright" class="uk-flex uk-flex-middle uk-flex-center">
-                    © 2026&nbsp;<a href="../">ゆきフォリオ (YUKINO Portfolio)</a>. All Rights Reserved.
+                    © 2026&nbsp;<a href="./">ゆきフォリオ (YUKINO Portfolio)</a>. All Rights Reserved.
                 </span>
             </section>
         </footer>
@@ -147,7 +146,7 @@ require_once "page/inner.phtml";
 	<img
 		id="peekCatImage"
 		class="peek-cat-image"
-		src="../image/materiaru/kinonya.png"
+		src="image/materiaru/kinonya.png"
 		alt="トップに戻る"
 		role="button"
 		tabindex="0"
@@ -171,6 +170,7 @@ require_once "page/inner.phtml";
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- User JS -->
-    <script defer src="../js/Return-to-top.js?<?= time(); ?>"></script>
+    <script defer src="./js/Return-to-top.js?<?= time(); ?>"></script>
+    <script defer type="module" src="./js/p_portfolio.js?<?= time(); ?>"></script>
 </body>
 </html>

@@ -97,7 +97,7 @@
 
     padding-left: 1rem;
     padding-bottom: .4rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
     border-bottom: .2rem solid #7e6b50;
 }
 
@@ -195,102 +195,64 @@
 * ____ 作品リスト部分 ____
 */
 
-.work-list-wrap {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 20px;
-	align-items: stretch;
+.st_mn_ct_mn_n_ls_card {
+    width: calc(50% - 1rem);
+    height: 12rem;
 }
 
-.list {
-	margin: 0;
-	min-width: 0;
-	height: 100%;
-}
-
-.list a {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	padding: 20px;
-	color: #666;
-	text-decoration: none;
-	background: #fff;
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
-	overflow: hidden;
-}
-
-.list a:hover {
-	color: #7e6b50;
-	background: #f4fafb;
-	border-color: #7e6b50;
-	text-decoration: none;
-	transform: translateY(-2px);
-}
-
-.list figure {
-	margin: 0;
-	padding: 0;
-}
-
-.list figure img {
-	float: left;
-	width: 25%;
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
-	border: none;
-	border-radius: 50%;
-}
-
-.list h4 {
-	margin: 0 0 10px 28%;
-	padding: 0;
-	color: #7e6b50;
-	font-size: 18px;
-	border-bottom: 1px dashed #7e6b50;
-	line-height: 1.6;
-}
-
-.list p {
-	margin: 0 0 0 28%;
-	padding: 0;
-	color: #666;
-	line-height: 1.9;
-	word-break: break-word;
+@media screen and (max-width: 1200px) {
+    .st_mn_ct_mn_n_ls_card {
+        height: 16rem;
+    }
 }
 
 @media screen and (orientation: portrait) {
-	.work-list-wrap {
-		grid-template-columns: 1fr;
-		gap: 16px;
-	}
+    .st_mn_ct_mn_n_ls_card {
+        height: 12rem;
+        width: calc(100% - 2rem);
+    }
+}
 
-	.list a {
-		padding: 16px;
-	}
+.st_mn_ct_mn_n_ls_c_link {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: .8rem;
+    transition: all .5s ease-in-out;
+}
 
-	.list figure img {
-		float: none;
-		display: block;
-		width: min(180px, 48%);
-		margin: 0 auto 14px;
-	}
+.st_mn_ct_mn_n_ls_c_link:hover {
+    border: 1px solid #7e6b50;
+    background: #eafcff;
+    transition: all .5s ease-in-out;
+}
 
-	.list h4,
-	.list p {
-		margin-left: 0;
-		text-align: center;
-	}
+.st_mn_ct_mn_n_ls_c_link > div {
+    width: calc(70% - 1.2rem);
+    height: 100%;
 
-	.list h4 {
-		margin-bottom: 8px;
-		font-size: 17px;
-	}
+    margin-left: 1.1rem;
+}
 
-	.list p {
-		line-height: 1.8;
-	}
+.st_mn_ct_mn_n_ls_c_l_img {
+    width: 30%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.st_mn_ct_mn_n_ls_c_l_title {
+    margin: 0;
+    padding-left: 1rem;
+    padding-bottom: .8rem;
+    color: #7e6b50;
+    font-size: 1.2rem;
+    border-bottom: dashed 1px #7e6b50;
+}
+
+.st_mn_ct_mn_n_ls_c_l_info {
+    color: #7e6b50;
+    font-size: .9rem;
+    padding-left: .9rem;
 }

@@ -1,0 +1,50 @@
+<?php
+function norBr($text)
+{
+    return str_replace(["\r\n", '\r\n', '\n', '\r'], "\n", $text);
+}
+?>
+
+<div id="st_mn-work_ct_side" class="uk-flex uk-flex-column">
+    <section id="st_mn-work_ct_sd_title" class="uk-flex">
+        <span>作品情報</span>
+    </section>
+    <section id="st_mn-work_ct_sd_info" class="uk-flex uk-flex-column">
+        <div id="st_mn-work_ct_sd_inf_target" class="st_mn-work_ct_sd_inf_box uk-flex uk-flex-column">
+            <div id="st_mn-work_ct_sd_inf_tg_title" class="fc-news-tag-fill">ターゲット</div>
+            <span id="st_mn-work_ct_sd_inf_tg_text"><?= nl2br(h(norBr($target))) ?></span>
+        </div>
+        <div id="st_mn-work_ct_sd_inf_mokuteki" class="st_mn-work_ct_sd_inf_box uk-flex uk-flex-column">
+            <div id="st_mn-work_ct_sd_inf_mk_title" class="fc-news-tag-blank">目的</div>
+            <span id="st_mn-work_ct_sd_inf_mk_text"><?= nl2br(h(norBr($mokuteki))) ?></span>
+        </div>
+        <div id="st_mn-work_ct_sd_inf_concept" class="st_mn-work_ct_sd_inf_box uk-flex uk-flex-column">
+            <div id="st_mn-work_ct_sd_inf_cc_title" class="fc-news-tag-fill">コンセプト</div>
+            <span id="st_mn-work_ct_sd_inf_cc_text"><?= nl2br(h(norBr($concept))) ?></span>
+        </div>
+        <div id="st_mn-work_ct_sd_inf_point" class="st_mn-work_ct_sd_inf_box uk-flex uk-flex-column">
+            <div id="st_mn-work_ct_sd_inf_pt_title" class="fc-news-tag-blank">ポイント</div>
+            <span id="st_mn-work_ct_sd_inf_pt_text"><?= nl2br(h(norBr($point))) ?></span>
+        </div>
+        <div id="st_mn-work_ct_sd_inf_tool" class="st_mn-work_ct_sd_inf_box uk-flex uk-flex-column">
+            <div id="st_mn-work_ct_sd_inf_tl_title" class="fc-news-tag-fill">使用ツール</div>
+            <span id="st_mn-work_ct_sd_inf_tl_text"><?= nl2br(h(norBr($tool))) ?></span>
+        </div>
+    </section>
+</div>
+
+<div id="st_mn-work_ct_main" class="uk-flex uk-flex-column">
+    <section id="st_mn-work_ct_mn_title" class="uk-flex uk-flex-middle">
+        <span id="st_mn-work_ct_mn_tt_wn_text"><?= h($title) ?></span>
+        <span id="st_mn-work_ct_mn_tt_tb_text" style="background:<?= h($labelColor) ?>;"><?= h($label) ?></span>
+    </section>
+    <section id="st_mn-work_ct_mn_image" class="uk-flex uk-flex-middle">
+        <div uk-grid uk-lightbox="animation: scale">
+            <div>
+                <a id="st_mn-work_ct_mn_img_in" class="uk-inline uk-flex uk-flex-middle uk-flex-center" href="<?= h(safe_img_url($imgurl)) ?>" data-caption="<?= h($title) ?>">
+                    <img src="<?= h(safe_img_url($imgurl)) ?>" alt="<?= h($title) ?>">
+                </a>
+            </div>
+        </div>
+    </section>
+</div>

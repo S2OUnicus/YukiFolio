@@ -79,12 +79,12 @@ error_reporting(E_ALL);
             <section id="st_mn_slider">
                 <div class="mainimg-slick">
                     <div>
-                        <a href="./gallery">
+                        <a href="./portfolio">
                             <img src="./image/slide/slide1.png" alt="作品集">
                         </a>
                     </div>
                     <div>
-                        <a href="./standalone/PDF/portfolio.pdf">
+                        <a href="./gallery">
                             <img src="./image/slide/slide2.png" alt="YUKINOチラシ">
                         </a>
                     </div>
