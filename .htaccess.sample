@@ -1,11 +1,25 @@
 location / {
-  try_files $uri $uri/ $uri.php?$args;
+    try_files $uri $uri/ $uri.php?$query_string;
 }
 
 location = /old {
-    return 301 /standalone/old;
+    rewrite ^ /standalone/old last;
 }
 
 location ^~ /old/ {
-    return 301 /standalone$uri;
+    rewrite ^ /standalone$uri last;
+}
+
+# /work と /work/ は gallery へ
+location = /work {
+    return 301 /gallery;
+}
+
+location = /work/ {
+    return 301 /gallery;
+}
+
+# /work/数字 だけを内部リライト
+location ~ ^/work/([0-9]+)/?$ {
+    rewrite ^/work/([0-9]+)/?$ /work/index.php?id=$1 last;
 }
