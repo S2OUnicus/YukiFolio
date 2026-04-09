@@ -59,12 +59,12 @@ div {
 
 /* 選択禁止クラス */
 .no-select {
-    -moz-user-select: none;
-    -o-user-select:none;
-    -khtml-user-select:none;
-    -webkit-user-select:none;
-    -ms-user-select:none;
-    user-select:none!important;
+    -moz-user-select: none !important;
+    -o-user-select:none !important;
+    -khtml-user-select:none !important;
+    -webkit-user-select:none !important;
+    -ms-user-select:none !important;
+    user-select:none !important;
 }
 
 .uk-alert-success {
@@ -89,6 +89,28 @@ div {
     scroll-behavior: smooth;
 
     background: url(../image/materiaru/backgraund.jpg) repeat;
+}
+
+nav,
+#st_nv_cmbtn,
+aside,
+footer,
+label,
+button,
+#st_mn_slider,
+#st_mn_ct_side,
+#st_mn_ct_mn_n_title,
+.st_mn_ct_mn_pd_g_title,
+#profile-title,
+#title,
+.FAQs,
+#st_mn-ctc_mn_left {
+    -moz-user-select: none !important;
+    -o-user-select:none !important;
+    -khtml-user-select:none !important;
+    -webkit-user-select:none !important;
+    -ms-user-select:none !important;
+    user-select:none !important;
 }
 
 

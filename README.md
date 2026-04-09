@@ -1,4 +1,5 @@
 > **レスポンシブ対応した個人ポートフォリオサイト**
+> 最新リリース： v1.0.1 [260410]
 
 ![YUKINO Portfolio - Open Graph](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/repository-open-graph-half.png)
 
@@ -10,7 +11,7 @@
 
 # イメージ
 
-![YUKINO Portfolio v1.0](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/Main.png)
+![YUKINO Portfolio v1.0.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/Main.png)
 
 
 ---
@@ -55,10 +56,12 @@
 
 ## 正式版
 
-- **v1.0 [260409]** : 最初の正式版。基礎機能のレスポンシブ化は完成。ゲーム・PDF閲覧・セールスページはおまけに追加
+- v1.0 [260409] : 最初の正式版。基礎機能のレスポンシブ化は完成。ゲーム・PDF閲覧・セールスページはおまけに追加
 
 ## 開発版
 
+- v1.0.1
+  - **v1.0.1 [260410] : 選択禁止部分に関わる修正**
 - v0.3
   - v0.3.3 [260409] : 作品詳細ページ・404 (502) ページを追加
   - v0.3.1 [260409] : 作品集ページに作品リストを挿入
