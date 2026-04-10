@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA変更レポート | PHP版ゆきフォリオ</title>
+  <style>
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f7f5f2; color: #222; }
+    main { max-width: 1100px; margin: 0 auto; padding: 32px 20px 48px; }
+    h1, h2 { color: #5a3c20; }
+    .card { background: #fff; border-radius: 18px; box-shadow: 0 10px 28px rgba(0,0,0,.06); padding: 22px; margin-bottom: 22px; }
+    .muted { color: #666; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #ece7e0; padding: 12px; vertical-align: top; text-align: left; }
+    th { background: #fbf8f4; }
+    code { background: #f5efe8; padding: 2px 6px; border-radius: 6px; }
+    ul { margin: 0; padding-left: 18px; }
+    .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .pill { display: inline-block; background: #f0e1d1; color: #5a3c20; border-radius: 999px; padding: 6px 10px; margin: 0 8px 8px 0; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>PWA変更レポート（PHP版）</h1>
+      <p class="muted">このHTMLは、PHP版サイトへ行ったPWA対応の変更内容をまとめたレポートです。</p>
+      <div class="cols">
+        <div>
+          <h2>今回の対応</h2>
+          <span class="pill">manifest追加</span>
+          <span class="pill">Service Worker追加</span>
+          <span class="pill">オフラインページ追加</span>
+          <span class="pill">インストールボタン追加</span>
+          <span class="pill">更新通知追加</span>
+          <span class="pill">キャッシュ拡張</span>
+          <span class="pill">icons差し替え</span>
+        </div>
+        <div>
+          <h2>件数</h2>
+          <p>変更ファイル数: <strong>34</strong></p>
+          <p>PWA埋め込み対象HTML/PHP数: <strong>22</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>追加・生成した主なファイル</h2>
+      <ul>
+        <li><code>manifest.webmanifest</code></li>
+        <li><code>service-worker.js</code></li>
+        <li><code>offline.html</code></li>
+        <li><code>css/pwa-ui.css</code></li>
+        <li><code>js/pwa-enhancements.js</code></li>
+        <li><code>pwa-changed-files.txt</code></li>
+        <li><code>pwa-html-files.txt</code></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>変更したファイル一覧</h2>
+      <table>
+        <thead><tr><th>ファイル</th><th>変更内容</th></tr></thead>
+        <tbody>
+          <tr><td><code>FAQ.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>common/404.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>common/page.phtml</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>contact.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>gallery.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>image/icons/apple-touch-icon.png</code></td><td><ul><li>アップロードされた icons.zip の画像に差し替え</li></ul></td></tr><tr><td><code>image/icons/icon-192.png</code></td><td><ul><li>アップロードされた icons.zip の画像に差し替え</li></ul></td></tr><tr><td><code>image/icons/icon-512.png</code></td><td><ul><li>アップロードされた icons.zip の画像に差し替え</li></ul></td></tr><tr><td><code>image/icons/icon-maskable-512.png</code></td><td><ul><li>アップロードされた icons.zip の画像に差し替え</li></ul></td></tr><tr><td><code>index.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>portfolio.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>profile.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>sells/handcream/index.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>sells/unlimited/index.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/access.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/concept.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/index.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/loader.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/menu.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/menu1.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/menu2.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/menu3.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/JIMUCTI/news.html</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>standalone/game/diffcat.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>work/common/nowork.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr><tr><td><code>work/index.php</code></td><td><ul><li>head に manifest / apple-touch-icon / PWA UI CSS を追加</li><li>body 終了前に Service Worker 設定と PWA 共通JSを追加</li></ul></td></tr>
+          <tr><td><code>manifest.webmanifest</code></td><td><ul><li>PWAマニフェストを新規追加</li><li>アイコン参照を <code>./image/icons/</code> に設定</li></ul></td></tr>
+          <tr><td><code>service-worker.js</code></td><td><ul><li>Service Worker を新規追加</li><li>ページ・CSS・JS・画像・フォント・PDF のキャッシュ制御を実装</li><li>更新時の <code>skipWaiting</code> に対応</li></ul></td></tr>
+          <tr><td><code>offline.html</code></td><td><ul><li>オフラインフォールバック画面を新規追加</li></ul></td></tr>
+          <tr><td><code>css/pwa-ui.css</code></td><td><ul><li>インストールボタンと更新通知UIのスタイルを追加</li></ul></td></tr>
+          <tr><td><code>js/pwa-enhancements.js</code></td><td><ul><li>インストールボタン表示</li><li>Service Worker登録</li><li>新バージョン検知時の更新通知</li></ul></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>HTML / PHP に加えた共通変更</h2>
+      <ul>
+        <li><code>&lt;head&gt;</code> 内へ <code>manifest</code> / <code>apple-touch-icon</code> / PWA用CSS を追加</li>
+        <li><code>&lt;/body&gt;</code> の直前へ PWA設定スクリプトと共通JSを追加</li>
+        <li>相対パスは各ディレクトリ階層に合わせて個別調整</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>キャッシュ対象の拡張内容</h2>
+      <ul>
+        <li>公開HTML / PHP ページを事前キャッシュ</li>
+        <li>同一オリジンの CSS / JS / 画像 / favicon / PDF / manifest を事前キャッシュ</li>
+        <li>外部CDN・Google Fonts は実アクセス時にランタイムキャッシュ</li>
+        <li><code>?time=...</code> のようなクエリ付き同一オリジン静的アセットは、検索パラメータを除いたキーでキャッシュ</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

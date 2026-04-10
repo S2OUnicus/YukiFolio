@@ -283,7 +283,15 @@
 			}
 
 		</style>
-	</head>
+	
+	<link rel="manifest" href="../../manifest.webmanifest">
+	<link rel="apple-touch-icon" href="../../image/icons/apple-touch-icon.png">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="ゆきフォリオ">
+	<link rel="stylesheet" href="../../css/pwa-ui.css">
+</head>
 
 	<body>
 		<div class="page">
@@ -622,6 +630,9 @@
 			updateUI();
 
 		</script>
-	</body>
+	
+	<script>window.__PWA_CONFIG__ = { swPath: '../../service-worker.js' };</script>
+	<script defer data-pwa-enhancements="1" src="../../js/pwa-enhancements.js"></script>
+</body>
 
 </html>

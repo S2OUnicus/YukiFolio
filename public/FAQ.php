@@ -41,6 +41,14 @@ error_reporting(E_ALL);
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<link rel="manifest" href="./manifest.webmanifest">
+	<link rel="apple-touch-icon" href="./image/icons/apple-touch-icon.png">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="ゆきフォリオ">
+	<link rel="stylesheet" href="./css/pwa-ui.css">
 </head>
 <body>
     <noscript>This Page Requires Javascript.</noscript>
@@ -172,5 +180,8 @@ require_once "page/faq.phtml";
     <!-- User JS -->
     <script defer src="./js/Return-to-top.js?<?= time(); ?>"></script>
     <script defer src="./js/p_faq.js?<?= time(); ?>"></script>
+
+	<script>window.__PWA_CONFIG__ = { swPath: './service-worker.js' };</script>
+	<script defer data-pwa-enhancements="1" src="./js/pwa-enhancements.js"></script>
 </body>
 </html>
