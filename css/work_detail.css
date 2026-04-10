@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "Klee One";
+    src: url("../external/KleeOne-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Klee One", sans-serif;
+}
+
+/* メイン列グループタイトル */
+#st_mn-work_ct_sd_title {
+    width: 100%;
+}
+
+#st_mn-work_ct_sd_title > span,
+#st_mn-work_ct_mn_title {
+    clear: both;
+
+    width: 100%;
+
+    color: #7e6b50;
+    font-size: 1.4rem;
+    font-weight: bold;
+
+    padding-left: 1rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 0.2rem solid #7e6b50;
+}
+
+#st_mn-work_ct_mn_tt_wn_text {
+    font-weight: bold;
+}
+
+/*
+* ----------------------------------
+*
+*       作品詳細ページ：エリア
+*
+* ----------------------------------
+*/
+
+#st_mn-work_ct_side {
+    width: 40%;
+    height: max-content;
+}
+
+#st_mn-work_ct_main {
+    width: calc(60% - 0.5rem);
+    height: max-content;
+    margin-left: 0.5rem;
+}
+
+@media screen and (orientation: portrait) {
+    #st_mn_content {
+        flex-direction: column-reverse;
+    }
+
+    #st_mn-work_ct_side,
+    #st_mn-work_ct_main {
+        width: 100%;
+    }
+
+    #st_mn-work_ct_sd_title {
+        width: 100%;
+    }
+}
+
+/*
+* ----------------------------------
+*
+*           サイドバー欄目
+*
+* ----------------------------------
+*/
+
+/* 欄目ボックス */
+.st_mn-work_ct_sd_inf_box {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+#st_mn-work_ct_sd_info > div {
+    padding-bottom: 1rem;
+}
+
+#st_mn-work_ct_sd_info > div:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.st_mn-work_ct_sd_inf_box:last-child {
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+#st_mn-work_ct_sd_info > div > div:first-child {
+    margin: 0.5rem 0.2rem;
+    padding-left: 0.5rem !important;
+}
+
+/* 細かい修正 */
+#st_mn-work_ct_sd_inf_mk_title {
+    transform: scale(0.8) translateX(0.28rem);
+}
+
+@media screen and (orientation: portrait) {
+}
+
+/*
+* ----------------------------------
+*
+*            メイン欄目
+*
+* ----------------------------------
+*/
+
+/* メインタイトルタグ */
+#st_mn-work_ct_mn_tt_tb_text {
+    transform: translateY(0.14rem);
+
+    width: max-content;
+    overflow: hidden;
+
+    margin-left: 1.2rem;
+    padding: 0.2rem;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    border-radius: 0.6rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (orientation: portrait) {
+    #st_mn-work_ct_main {
+        margin: 0;
+    }
+}
+
+/* ------ 画像ボックス ------ */
+
+#st_mn-work_ct_mn_title,
+#st_mn-work_ct_mn_image {
+    width: 100%;
+}
+
+#st_mn-work_ct_mn_image {
+    height: 25rem;
+    padding: 1rem;
+}
+
+#st_mn-work_ct_mn_image div,
+#st_mn-work_ct_mn_img_in {
+    width: 100%;
+    height: 100%;
+}
+
+#st_mn-work_ct_mn_image > div {
+    margin: 0;
+}
+
+#st_mn-work_ct_mn_img_in > img {
+    display: block;
+
+    max-height: 100%;
+    aspect-ratio: auto;
+}
+
+.uk-lightbox-items-fit > div > img {
+    max-height: 70%;
+    max-width: 70%;
+    aspect-ratio: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
