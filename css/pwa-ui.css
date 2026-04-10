@@ -1,0 +1,116 @@
+:root {
+  --pwa-accent: #c2a384;
+  --pwa-accent-deep: #a88462;
+  --pwa-text: #3f3027;
+  --pwa-surface: rgba(255, 255, 255, 0.96);
+  --pwa-border: rgba(194, 163, 132, 0.28);
+  --pwa-shadow: 0 14px 34px rgba(76, 51, 30, 0.18);
+}
+
+.pwa-install-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: var(--pwa-accent);
+  color: #fff;
+  box-shadow: var(--pwa-shadow);
+  font: 700 14px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  cursor: pointer;
+}
+
+.pwa-install-button:hover,
+.pwa-install-button:focus-visible {
+  background: var(--pwa-accent-deep);
+}
+
+.pwa-install-button[hidden] {
+  display: none !important;
+}
+
+.pwa-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 10000;
+  width: min(calc(100vw - 24px), 520px);
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid var(--pwa-border);
+  background: var(--pwa-surface);
+  color: var(--pwa-text);
+  box-shadow: var(--pwa-shadow);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+}
+
+.pwa-toast[hidden] {
+  display: none !important;
+}
+
+.pwa-toast__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.pwa-toast__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pwa-toast__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pwa-toast__button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font: 700 13px/1.2 inherit;
+  cursor: pointer;
+}
+
+.pwa-toast__button--primary {
+  background: var(--pwa-accent);
+  color: #fff;
+}
+
+.pwa-toast__button--secondary {
+  background: rgba(63, 48, 39, 0.08);
+  color: var(--pwa-text);
+}
+
+.pwa-toast__button:hover,
+.pwa-toast__button:focus-visible {
+  filter: brightness(0.97);
+}
+
+@media (max-width: 640px) {
+  .pwa-install-button {
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .pwa-toast {
+    bottom: 12px;
+    width: min(calc(100vw - 20px), 520px);
+    padding: 14px;
+  }
+}

@@ -32,7 +32,15 @@
         <link href="style.css" rel="stylesheet" />
         <!-- JQuery -->
         <script src="../../external/jquery.min.js"></script>
-    </head>
+    
+        <link rel="manifest" href="../../manifest.webmanifest" />
+        <link rel="apple-touch-icon" href="../../image/icons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="mobile-web-app-capable" content="yes" />
+    
+    <link rel="stylesheet" href="../../css/pwa-ui.css" />
+</head>
     <body>
         <header class="site-header">
             <div class="container header-inner">
@@ -290,5 +298,7 @@
             </div>
         </div>
         <script src="script.js"></script>
-    </body>
+
+    <script src="../../js/pwa-enhancements.js" defer data-pwa-root="../../"></script>
+</body>
 </html>

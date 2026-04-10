@@ -1,0 +1,47 @@
+{
+  "name": "ゆきフォリオ (YUKINO Portfolio)",
+  "short_name": "ゆきフォリオ",
+  "description": "YUKINO Portfolio の作品・プロフィール・FAQ・お問い合わせを閲覧できるポートフォリオサイトです。",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f3ee",
+  "theme_color": "#c2a384",
+  "icons": [
+    {
+      "src": "./image/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./image/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./image/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "ギャラリー",
+      "short_name": "Gallery",
+      "url": "./gallery.html"
+    },
+    {
+      "name": "プロフィール",
+      "short_name": "Profile",
+      "url": "./profile.html"
+    },
+    {
+      "name": "お問い合わせ",
+      "short_name": "Contact",
+      "url": "./contact.html"
+    }
+  ]
+}
