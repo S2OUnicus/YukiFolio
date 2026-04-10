@@ -1,6 +1,10 @@
 > **レスポンシブ対応した個人ポートフォリオサイト**
 
-> 最新リリース： v1.0.2 [260410]
+> 最新リリース： v1.1 [260410]
+
+
+[［プレビュー］](https://s2ounicus.github.io/YukiFolio/)
+
 
 ![YUKINO Portfolio - Open Graph](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/repository-open-graph-half.png)
 
@@ -12,7 +16,7 @@
 
 # イメージ
 
-![YUKINO Portfolio v1.0.2](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/Main.png)
+![YUKINO Portfolio v1.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/Main.png)
 
 
 ------
@@ -53,10 +57,11 @@
 - トップに戻る猫
 - サイドメニュー（モバイル）［新規］
 
-# バージョン履歴
+# 更新履歴
 
 ## 正式版
 
+- **v1.1 [260410] : 静的サイトをブランチ ```page``` に追加**
 - v1.0 [260409] : 最初の正式版。基礎機能のレスポンシブ化は完成。ゲーム・PDF閲覧・セールスページはおまけに追加
 
 ## 開発版
