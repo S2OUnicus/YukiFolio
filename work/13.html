@@ -26,7 +26,15 @@
         <link href="../css/work_detail.css" rel="stylesheet" />
         <!-- JQuery -->
         <script src="../external/jquery.min.js"></script>
-    </head>
+    
+        <link rel="manifest" href="../manifest.webmanifest" />
+        <link rel="apple-touch-icon" href="../image/icons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="mobile-web-app-capable" content="yes" />
+    
+    <link rel="stylesheet" href="../css/pwa-ui.css" />
+</head>
     <body>
         <noscript>This Page Requires Javascript.</noscript>
         <div id="stage">
@@ -363,5 +371,7 @@
         <script defer="" src="../external/slick.min.js"></script>
         <!-- User JS -->
         <script defer="" src="../js/Return-to-top.js"></script>
-    </body>
+
+    <script src="../js/pwa-enhancements.js" defer data-pwa-root="../"></script>
+</body>
 </html>
