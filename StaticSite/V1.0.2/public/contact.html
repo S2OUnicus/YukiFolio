@@ -1,0 +1,469 @@
+<!doctype html>
+
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="no-siteapp" http-equiv="Cache-Control" />
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+        <meta content="origin-when-cross-origin" name="referrer" />
+        <meta content="index,follow" name="robots" />
+        <meta
+            content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+            name="viewport"
+        />
+        <meta content="telephone=no,email=no" name="format-detection" />
+        <meta content="notranslate" name="google" />
+        <meta content="#c2a384" name="theme-color" />
+        <meta content="Yukino, @S2OUnicus" name="author" />
+        <link href="favicon.ico" rel="icon" />
+        <title>お問い合わせ - ゆきフォリオ (YUKINO Portfolio)</title>
+        <!-- Uikit CSS -->
+        <link href="external/uikit.min.css" rel="stylesheet" />
+        <!-- Slick Core -->
+        <link href="external/slick.css" rel="stylesheet" />
+        <!-- Base Style -->
+        <link href="css/base.css" rel="stylesheet" />
+        <link href="css/main_contact.css" rel="stylesheet" />
+        <!-- JQuery -->
+        <script src="external/jquery.min.js"></script>
+    </head>
+    <body>
+        <noscript>This Page Requires Javascript.</noscript>
+        <div id="stage">
+            <!-- ナビゲーション -->
+            <nav class="uk-flex uk-flex-middle">
+                <!-- モバイルメニュー呼び出しボタン -->
+                <button
+                    class="uk-button uk-button-default uk-flex uk-flex-center uk-flex-middle"
+                    id="st_nv_cmbtn"
+                    type="button"
+                    uk-toggle="target: #st_as_mbmenu"
+                >
+                    <span
+                        class="uk-flex uk-flex-center uk-flex-middle"
+                        uk-icon="table"
+                    ></span>
+                </button>
+                <!-- ブランド -->
+                <div class="uk-flex uk-flex-middle" id="st_nv_brand">
+                    <!-- サイトロゴ -->
+                    <a href="index.html" id="st_nv_b_logo"></a>
+                </div>
+                <!-- PCメニュー -->
+                <div
+                    class="uk-flex uk-flex-middle uk-flex-right"
+                    id="st_nv_menu"
+                >
+                    <a
+                        class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center"
+                        href="index.html"
+                        uk-tooltip="title:トップ（ホーム）;pos:bottom"
+                        >Index</a
+                    >
+                    <a
+                        class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center"
+                        href="gallery.html"
+                        uk-tooltip="title:ギャラリー（作品集）;pos:bottom"
+                        >Gallery</a
+                    >
+                    <a
+                        class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center"
+                        href="profile.html"
+                        uk-tooltip="title:プロフィール;pos:bottom"
+                        >Profile</a
+                    >
+                    <a
+                        class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center"
+                        href="FAQ.html"
+                        uk-tooltip="title:質問＆回答;pos:bottom"
+                        >FAQ</a
+                    >
+                    <a
+                        class="st_nv_m_btn uk-flex uk-flex-middle uk-flex-center"
+                        href="contact.html"
+                        uk-tooltip="title:お問い合わせ;pos:bottom"
+                        >Inquiry</a
+                    >
+                </div>
+            </nav>
+            <!-- 主要部分 -->
+            <main class="uk-flex uk-flex-column uk-flex-middle">
+                <section class="uk-flex" id="st_mn_content">
+                    <article class="contact-page uk-section uk-section-muted">
+                        <div class="uk-container uk-container-large">
+                            <div
+                                class="uk-grid uk-flex-middle uk-grid-large"
+                                uk-grid=""
+                            >
+                                <div
+                                    class="uk-width-1-1 uk-width-2-5@l"
+                                    id="st_mn-ctc_mn_left"
+                                >
+                                    <div class="contact-hero">
+                                        <span class="contact-badge"
+                                            >CONTACT</span
+                                        >
+                                        <h1 class="inquiry">お問い合わせ</h1>
+                                        <p class="contact-lead">
+                                            アイデアやアドバイス、製作者に聞きたいことなどを募集しております。
+                                            <br />お気軽にお問い合わせください。
+                                        </p>
+                                        <div
+                                            class="contact-info uk-card uk-card-small uk-card-body"
+                                        >
+                                            <ul class="uk-list uk-list-bullet">
+                                                <li>
+                                                    必要事項を記入し、「確認する」をクリックしてください。
+                                                </li>
+                                                <li>
+                                                    ご登録いただいた個人情報は、お問い合わせ内容の確認以外には使用いたしません。
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1 uk-width-3-5@l">
+                                    <div
+                                        class="uk-card uk-card-default uk-card-body contact-card"
+                                    >
+                                        <form
+                                            action="#"
+                                            class="uk-form-stacked contact-form"
+                                        >
+                                            <div
+                                                class="uk-grid-small uk-child-width-1-2@m"
+                                                uk-grid=""
+                                            >
+                                                <div>
+                                                    <label
+                                                        class="uk-form-label form-label"
+                                                        for="name"
+                                                        >ニックネーム
+                                                        <span
+                                                            class="required-badge"
+                                                            >必須</span
+                                                        ></label
+                                                    >
+                                                    <div
+                                                        class="uk-form-controls"
+                                                    >
+                                                        <input
+                                                            class="uk-input contact-input"
+                                                            id="name"
+                                                            name="name"
+                                                            required=""
+                                                            type="text"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label
+                                                        class="uk-form-label form-label"
+                                                        for="mail"
+                                                        >メールアドレス
+                                                        <span
+                                                            class="required-badge"
+                                                            >必須</span
+                                                        ></label
+                                                    >
+                                                    <div
+                                                        class="uk-form-controls"
+                                                    >
+                                                        <input
+                                                            class="uk-input contact-input"
+                                                            id="mail"
+                                                            name="mail"
+                                                            required=""
+                                                            type="email"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uk-margin-medium-top">
+                                                <label
+                                                    class="uk-form-label form-label"
+                                                    >お問い合わせ種類</label
+                                                >
+                                                <div
+                                                    class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-4@m"
+                                                    uk-grid=""
+                                                >
+                                                    <div>
+                                                        <label
+                                                            class="choice-card"
+                                                        >
+                                                            <input
+                                                                class="uk-radio"
+                                                                name="kind"
+                                                                type="radio"
+                                                                value="0"
+                                                            />
+                                                            <span
+                                                                >アイデア</span
+                                                            ></label
+                                                        >
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="choice-card"
+                                                        >
+                                                            <input
+                                                                class="uk-radio"
+                                                                name="kind"
+                                                                type="radio"
+                                                                value="1"
+                                                            />
+                                                            <span
+                                                                >アドバイス</span
+                                                            ></label
+                                                        >
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="choice-card"
+                                                        >
+                                                            <input
+                                                                class="uk-radio"
+                                                                name="kind"
+                                                                type="radio"
+                                                                value="2"
+                                                            />
+                                                            <span
+                                                                >質問</span
+                                                            ></label
+                                                        >
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="choice-card"
+                                                        >
+                                                            <input
+                                                                class="uk-radio"
+                                                                name="kind"
+                                                                type="radio"
+                                                                value="3"
+                                                            />
+                                                            <span
+                                                                >その他</span
+                                                            ></label
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uk-margin-medium-top">
+                                                <label
+                                                    class="uk-form-label form-label"
+                                                    for="comment"
+                                                    >内容</label
+                                                >
+                                                <div class="uk-form-controls">
+                                                    <textarea
+                                                        class="uk-textarea contact-textarea"
+                                                        id="comment"
+                                                        name="comment"
+                                                        rows="8"
+                                                    ></textarea>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="uk-margin-medium-top contact-checks"
+                                            >
+                                                <label
+                                                    class="uk-display-block uk-margin-small-bottom"
+                                                >
+                                                    <input
+                                                        class="uk-checkbox"
+                                                        name="newsletter"
+                                                        type="checkbox"
+                                                    />
+                                                    <span
+                                                        >メールマガジンの配信を希望</span
+                                                    ></label
+                                                >
+                                                <label class="uk-display-block">
+                                                    <input
+                                                        class="uk-checkbox"
+                                                        name="updates"
+                                                        type="checkbox"
+                                                    />
+                                                    <span
+                                                        >今後の更新情報を受け取る</span
+                                                    ></label
+                                                >
+                                            </div>
+                                            <div
+                                                class="uk-margin-large-top uk-text-center"
+                                            >
+                                                <button
+                                                    class="uk-button uk-button-primary contact-button"
+                                                    type="submit"
+                                                >
+                                                    確認する
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </main>
+            <!-- モバイルメニュー -->
+            <aside>
+                <div id="st_as_mbmenu" uk-offcanvas="overlay:true">
+                    <div class="uk-offcanvas-bar">
+                        <ul class="uk-nav uk-nav-default" uk-margin="">
+                            <li class="uk-active" id="st_as_m_title">
+                                <a
+                                    class="uk-flex uk-flex-middle"
+                                    href="index.html"
+                                >
+                                    <img
+                                        alt=""
+                                        id="st_as_m_tt_logo"
+                                        src="favicon.ico"
+                                    />
+                                    <div
+                                        class="uk-flex uk-flex-column uk-margin-left"
+                                    >
+                                        <span
+                                            class="uk-text-default uk-text-bold"
+                                            >ゆきフォリオ</span
+                                        >
+                                        <span class="uk-text-meta"
+                                            >YUKINO Portfolio</span
+                                        >
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="uk-text-default uk-nav-header">
+                                メニュー
+                            </li>
+                            <li
+                                class="uk-nav-divider uk-margin-small-top uk-margin-small-bottom"
+                            ></li>
+                            <li>
+                                <a
+                                    class="uk-flex uk-flex-middle"
+                                    href="index.html"
+                                    ><span
+                                        class="uk-margin-small-right"
+                                        uk-icon="icon: home"
+                                    ></span>
+                                    ホーム<span class="uk-badge">Index</span></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="uk-flex uk-flex-middle"
+                                    href="gallery.html"
+                                    ><span
+                                        class="uk-margin-small-right"
+                                        uk-icon="icon: image"
+                                    ></span>
+                                    作品一覧<span class="uk-badge"
+                                        >Gallery</span
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="uk-flex uk-flex-middle"
+                                    href="profile.html"
+                                    ><span
+                                        class="uk-margin-small-right"
+                                        uk-icon="icon: user"
+                                    ></span>
+                                    プロフィール<span class="uk-badge"
+                                        >Profile</span
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="uk-flex uk-flex-middle"
+                                    href="FAQ.html"
+                                    ><span
+                                        class="uk-margin-small-right"
+                                        uk-icon="icon: question"
+                                    ></span>
+                                    質問＆回答<span class="uk-badge"
+                                        >FAQ</span
+                                    ></a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="uk-flex uk-flex-middle"
+                                    href="contact.html"
+                                    ><span
+                                        class="uk-margin-small-right"
+                                        uk-icon="icon: comments"
+                                    ></span>
+                                    お問い合わせ<span class="uk-badge"
+                                        >Inquiry</span
+                                    ></a
+                                >
+                            </li>
+                            <li
+                                class="uk-nav-divider uk-margin-small-top uk-margin-small-bottom"
+                            ></li>
+                            <li class="uk-text-meta">Designed By YUKINO</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <!-- フッター -->
+            <footer
+                class="uk-flex uk-flex-column uk-flex-middle uk-flex-center"
+            >
+                <section
+                    class="uk-flex uk-flex-middle uk-flex-center"
+                    id="st_ft_link"
+                >
+                    <a href="index.html">トップ</a>
+                    <a href="gallery.html">ギャラリー（作品集）</a>
+                    <a href="profile.html">プロフィール</a>
+                    <a href="FAQ.html">質問＆回答</a>
+                    <a href="contact.html">お問い合わせ</a>
+                </section>
+                <section
+                    class="uk-flex uk-flex-column uk-flex-middle uk-flex-center"
+                    id="st_ft_info"
+                >
+                    <span
+                        class="uk-flex uk-flex-middle uk-flex-center"
+                        id="st_ft_inf_copyright"
+                    >
+                        © 2026 <a href="index.html"
+                            >ゆきフォリオ (YUKINO Portfolio)</a
+                        >. All Rights Reserved.
+                    </span>
+                </section>
+            </footer>
+        </div>
+        <div class="peek-cat" id="peekCat">
+            <img
+                alt="トップに戻る"
+                class="peek-cat-image"
+                decoding="async"
+                draggable="false"
+                id="peekCatImage"
+                role="button"
+                src="image/materiaru/kinonya.png"
+                tabindex="0"
+            />
+            <button class="peek-cat-tip" id="peekCatTip" type="button">
+                トップに戻る
+            </button>
+        </div>
+        <!-- Uikit CSS -->
+        <script defer="" src="external/uikit.min.js"></script>
+        <script defer="" src="external/uikit-icons.min.js"></script>
+        <!-- Slick Core -->
+        <script defer="" src="external/slick.min.js"></script>
+        <!-- User JS -->
+        <script defer="" src="js/Return-to-top.js"></script>
+    </body>
+</html>

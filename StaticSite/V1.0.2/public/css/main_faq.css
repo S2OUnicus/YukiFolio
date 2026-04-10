@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "Klee One";
+    src: url("../external/KleeOne-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "Klee One", sans-serif;
+}
+
+#faq_outer {
+    width: 100%;
+    height: max-content;
+    padding: 1rem;
+}
+
+#title {
+    margin: 0 0 40px;
+    color: rgb(93, 59, 35);
+    font-size: 34px;
+    text-align: center;
+}
+
+.faq-sections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px 32px;
+    align-items: start;
+}
+
+.faq-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.FAQ1,
+.FAQ2,
+.FAQ3,
+.FAQ4 {
+    margin: 0 0 10px;
+    padding-left: 20px;
+    font-size: 23px;
+    border-left-style: solid;
+    border-left-width: 5px;
+}
+
+.FAQ1 {
+    border-left-color: #aee7be;
+}
+.FAQ2 {
+    border-left-color: #e4bc6c;
+}
+.FAQ3 {
+    border-left-color: #e7aee2;
+}
+.FAQ4 {
+    border-left-color: #9581f8;
+}
+
+.list {
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.line {
+    padding: 12px 0;
+    border-bottom: 1px solid #6d5318;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.question {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+    white-space: normal;
+    line-height: 1.8;
+}
+
+.open {
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    color: #3e1f1f;
+    transition: transform 0.3s ease;
+}
+
+.answer {
+    display: block;
+    max-height: 0;
+    overflow: visible;
+    opacity: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #3e2727;
+    transition:
+        max-height 0.45s ease,
+        opacity 0.3s ease,
+        padding 0.3s ease;
+}
+
+.line.is-open .answer {
+    opacity: 1;
+    padding: 10px 0 10px;
+}
+
+@media screen and (orientation: portrait) {
+    #title {
+        font-size: 30px;
+        margin-bottom: 28px;
+    }
+
+    .faq-sections {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-items: center;
+    }
+
+    .faq-section {
+        width: min(100%, 720px);
+    }
+
+    .FAQ1,
+    .FAQ2,
+    .FAQ3,
+    .FAQ4 {
+        font-size: 20px;
+    }
+
+    .main {
+        align-items: flex-start;
+    }
+
+    .question {
+        font-size: 15px;
+    }
+}

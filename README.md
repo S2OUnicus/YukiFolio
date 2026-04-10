@@ -1,21 +1,21 @@
 > **レスポンシブ対応した個人ポートフォリオサイト**
 
-> 最新リリース： v1.0.1 [260410]
+> 最新リリース： v1.0.2 [260410]
 
 ![YUKINO Portfolio - Open Graph](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/repository-open-graph-half.png)
 
 > ゆきフォリオ (YUKINO Portfolio)
 
 
----
+------
 
 
 # イメージ
 
-![YUKINO Portfolio v1.0.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/Main.png)
+![YUKINO Portfolio v1.0.2](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/Main.png)
 
 
----
+------
 
 
 # テーマ
@@ -24,7 +24,7 @@
 ナチュラルなテイストで全体をまとめ、統一感のあるデザインを意識しています
 
 
----
+------
 
 
 # 機能
@@ -62,7 +62,8 @@
 ## 開発版
 
 - v1.0
-  - **v1.0.1 [260410] : 選択禁止部分に関わる修正**
+  - v1.0.2 [260410] : 静的バージョンを追加（Based On v1.0.1+）、JIMUCTI サイト最小化、Rewrite Rules、インデックスパス
+  - v1.0.1 [260410] : 選択禁止部分に関わる修正
 - v0.3
   - v0.3.3 [260409] : 作品詳細ページ・404 (502) ページを追加
   - v0.3.1 [260409] : 作品集ページに作品リストを挿入
@@ -74,7 +75,7 @@
   - v0.0.1 [260406] : 開発ベースバージョン
 
 
----
+------
 
 
 # 技術
@@ -102,7 +103,7 @@
 - ThreeJS @ 0.180.0
 
 
----
+------
 
 
 # ギャラリー
