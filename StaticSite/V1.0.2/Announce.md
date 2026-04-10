@@ -13,14 +13,16 @@ Since 2026-04-06
 １．リポジトリ（コード倉庫）：
 https://github.com/S2OUnicus/YukiFolio
 
-**２．静的バージョンのサイトパック：**
+２．リリースページ：
+https://github.com/S2OUnicus/YukiFolio/releases/tag/v1.0.2
 
-‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+**３．静的バージョンのサイトパック：**
+https://github.com/S2OUnicus/YukiFolio/archive/refs/tags/v1.0.2.zip
 
-３．ランタイム（開発中プレビュー）
+４．ランタイム（開発中プレビュー）
 https://ysite.me/
 
-４．オリジナル（最初のバージョン・対照用）
+５．オリジナル（最初のバージョン・対照用）
 https://ysite.me/old/mf-cleaned/index.html
 
 
