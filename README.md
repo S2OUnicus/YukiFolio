@@ -1,6 +1,6 @@
 > **レスポンシブ対応した個人ポートフォリオサイト**
 
-> 最新リリース： v1.1 [260410]
+> 最新リリース： v1.1.1 [260410]
 
 
 [［プレビュー］](https://s2ounicus.github.io/YukiFolio/)
@@ -16,7 +16,11 @@
 
 # イメージ
 
-![YUKINO Portfolio v1.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.0/Main.png)
+![YUKINO Portfolio v1.1.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.1.1/Main.png)
+
+![YUKINO Portfolio v1.1.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.1.1/Main_2.png)
+
+![YUKINO Portfolio v1.1.1](https://github.com/S2OUnicus/YukiFolio/raw/main/Screenshot/v1.1.1/Main_3.png)
 
 
 ------
@@ -57,16 +61,21 @@
 - トップに戻る猫
 - サイドメニュー（モバイル）［新規］
 
+
+------
+
+
 # 更新履歴
 
 ## 正式版
 
-- **v1.1 [260410] : 静的サイトをブランチ ```page``` に追加**
+- v1.1 [260410] : 静的サイトをブランチ ```page``` に追加
 - v1.0 [260409] : 最初の正式版。基礎機能のレスポンシブ化は完成。ゲーム・PDF閲覧・セールスページはおまけに追加
 
 ## 開発版
 
 - v1.0
+  - **v1.1.1 [260410] : PWA機能を追加**
   - v1.0.2 [260410] : 静的バージョンを追加（Based On v1.0.1+）、JIMUCTI サイト最小化、Rewrite Rules、インデックスパス
   - v1.0.1 [260410] : 選択禁止部分に関わる修正
 - v0.3
@@ -87,10 +96,10 @@
 
 ## 言語
 
-- PHP 8.5
-- HTML5
-- CSS3
-- JavaScript ES6
+- PHP
+- HTML
+- CSS
+- JavaScript
 
 ## ツール
 
@@ -102,10 +111,10 @@
 
 ## 外部リポジトリ
 
-- jQuery @ 3.7.1
-- Uikit CSS @ 3.2.13
-- Slick-Carousel @ 1.9.0
-- ThreeJS @ 0.180.0
+- jQuery
+- UikitCSS
+- Slick-Carousel
+- ThreeJS
 
 
 ------
