@@ -1,3 +1,6 @@
+# Settings
+/Config/Project/
+
 # PHP Composer
 composer.lock
 #/vendor

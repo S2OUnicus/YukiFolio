@@ -1,0 +1,14 @@
+<?php
+
+declare(strict_types=1);
+
+if (!defined('PROJECT_BOOTSTRAPPED')) {
+    http_response_code(404);
+    exit;
+}
+?>
+<section class="list" data-post-id="<?= e((string) $postId) ?>">
+    <?php foreach ($items as $item): ?>
+        <div class="list-data"><?= e((string) $item) ?></div>
+    <?php endforeach; ?>
+</section>

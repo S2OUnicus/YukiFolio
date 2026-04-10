@@ -1,15 +1,5 @@
-
-	<link rel="manifest" href="../../manifest.webmanifest">
-	<link rel="apple-touch-icon" href="../../image/icons/apple-touch-icon.png">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-	<meta name="apple-mobile-web-app-title" content="ゆきフォリオ">
-	<link rel="stylesheet" href="../../css/pwa-ui.css">
-</head>
 <!DOCTYPE html>
 <html lang="ja">
-
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="Cache-Control" content="no-siteapp">
@@ -29,9 +19,17 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet">
 		<!-- Base Style -->
-		<link rel="stylesheet" href="./base.css?<?= time(); ?>">
+		<link rel="stylesheet" href="./base.css">
 		<!-- JQuery -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<link rel="manifest" href="../../manifest.webmanifest">
+		<link rel="apple-touch-icon" href="../../image/icons/apple-touch-icon.png">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="default">
+		<meta name="apple-mobile-web-app-title" content="ゆきフォリオ">
+		<link rel="stylesheet" href="../../css/pwa-ui.css">
 	</head>
 
 	<body>
@@ -274,8 +272,8 @@
 		</main>
 		<footer class="site-footer">© 2026 ゆきフォリオ (YUKINO Portfolio). All Rights Reserved.</footer>
 		<script defer src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-		<script defer src="./base.js?<?= time(); ?>"></script>
-	
+		<script defer src="./base.js"></script>
+
 	<script>window.__PWA_CONFIG__ = { swPath: '../../service-worker.js' };</script>
 	<script defer data-pwa-enhancements="1" src="../../js/pwa-enhancements.js"></script>
 </body>

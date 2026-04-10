@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Base Style -->
-    <link rel="stylesheet" href="./style.css?<?= time(); ?>">
+    <link rel="stylesheet" href="./style.css">
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -225,8 +225,8 @@
 				<img src="exhibition.jpg" alt="Unlimited! 進級展の告知ポスター拡大画像" />
 			</div>
 		</div>
-		<script src="./script.js?<?= time(); ?>"></script>
-	
+		<script src="./script.js"></script>
+
 	<script>window.__PWA_CONFIG__ = { swPath: '../../service-worker.js' };</script>
 	<script defer data-pwa-enhancements="1" src="../../js/pwa-enhancements.js"></script>
 </body>

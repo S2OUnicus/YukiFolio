@@ -1,7 +1,7 @@
 error_page 404 /common/404.html;
 error_page 502 /common/404.html;
 
-rewrite ^/(?:old|game|JIMUCTI)(?:/.*)?$ /standalone$uri last;
+rewrite ^/(?:old|game|JIMUCTI|Project)(?:/.*)?$ /standalone$uri last;
 
 # /old, /game, /JIMUCTI 本体と配下を /standalone へ
 rewrite ^/(old|game|JIMUCTI)(/.*)?$ /standalone$uri last;
