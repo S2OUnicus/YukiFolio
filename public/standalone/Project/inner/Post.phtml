@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+if (!defined('PROJECT_BOOTSTRAPPED')) {
+    http_response_code(403);
+    exit('403 Forbidden');
+}
+?>
+<section id="list">
+    <?php foreach (($listItems ?? []) as $index => $value): ?>
+        <div id="list-<?= $index; ?>" class="list-item">
+            <div class="list-data"><?= project_h($value); ?></div>
+        </div>
+    <?php endforeach; ?>
+</section>

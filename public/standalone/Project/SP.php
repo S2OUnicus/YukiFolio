@@ -2,10 +2,7 @@
 
 declare(strict_types=1);
 
-require_once dirname(__DIR__, 3) . '/Config/Project/Project.php';
-
-$pageTitle = 'Project Index';
-$indexData = project_load_index_data();
+require_once dirname(__DIR__, 3) . '/Config/Project/SP.php';
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -20,7 +17,7 @@ $indexData = project_load_index_data();
     <body>
         <?php require_once $common_dir . '/noscript.phtml'; ?>
         <div id="stage">
-            <?php require_once $inner_dir . '/index_im.phtml'; ?>
+            <?php require_once $inner_dir . '/SP.phtml'; ?>
         </div>
         <?php require_once $common_dir . '/script_last.phtml'; ?>
     </body>

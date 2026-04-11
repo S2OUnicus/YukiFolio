@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+if (!defined('PROJECT_BOOTSTRAPPED')) {
+    http_response_code(403);
+    exit('403 Forbidden');
+}
+?>
+<a id="nsm" href="<?= project_h($spData['link'] ?? ''); ?>" title="<?= project_h($spData['title'] ?? ''); ?>">
+    <?= project_h($spData['title'] ?? ''); ?>
+</a>

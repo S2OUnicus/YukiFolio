@@ -1,0 +1,11 @@
+<?php
+
+declare(strict_types=1);
+
+if (!defined('PROJECT_BOOTSTRAPPED')) {
+    http_response_code(403);
+    exit('403 Forbidden');
+}
+?>
+<div id="csn"><?= project_h($indexData['csn'] ?? ''); ?></div>
+<div id="vsm"><?= project_h($indexData['vsm'] ?? ''); ?></div>

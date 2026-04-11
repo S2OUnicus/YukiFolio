@@ -1,0 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+if (!defined('PROJECT_BOOTSTRAPPED')) {
+    http_response_code(403);
+    exit('403 Forbidden');
+}
+?>
+<link rel="canonical" href="<?= project_h(project_current_uri()); ?>">
